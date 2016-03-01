@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+#Hero Lab compiled files that should not be used by others.
+.hlz
+timing.xml
+unused.xml
