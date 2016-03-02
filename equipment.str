@@ -350,7 +350,7 @@
         mark ourselves as not satisfying the requirement -->
     <eval index="1" phase="Final" priority="5000"><![CDATA[
       ~if the minimum strength is satisfied, there's nothing to do
-      doneif (field[wpStrReq].value <= #trait[attrStr])
+      doneif (field[wpStrReq].value <= #trait[aSTR])
 
       ~assign a tag to indicate the requirement isn't met
       perform assign[Helper.BadStrReq]
@@ -394,7 +394,7 @@
         validif (@ispick <> 0)
 
         ~verify whether we meet the strength requirement
-        validif (#trait[attrStr] >= altthing.field[wpStrReq].value)
+        validif (#trait[aSTR] >= altthing.field[wpStrReq].value)
         ]]></validate>
       </prereq>
 
@@ -460,9 +460,9 @@
     <tag group="Armory" tag="Range"/>
 
     <!-- Calculate the net attack roll for the weapon -->
-    <eval index="1" phase="Final" priority="7000" name="Calc wpNetAtk"><![CDATA[
+    <!-- <eval index="1" phase="Final" priority="7000" name="Calc wpNetAtk"><![CDATA[
       field[wpNetAtk].value = #trait[skShooting] + field[wpBonus].value + field[wpPenalty].value
-      ]]></eval>
+      ]]></eval> -->
 
     <!-- Prepend any derived special notes to the appropriate field -->
     <eval index="2" phase="Render" priority="2000"><![CDATA[
@@ -495,9 +495,9 @@
       ]]></eval>
 
     <!-- Calculate the net attack roll for the weapon -->
-    <eval index="2" phase="Final" priority="7000" name="Calc wpNetAtk"><![CDATA[
+    <!-- <eval index="2" phase="Final" priority="7000" name="Calc wpNetAtk"><![CDATA[
       field[wpNetAtk].value = #trait[skMelee] + field[wpBonus].value + field[wpPenalty].value
-      ]]></eval>
+      ]]></eval> -->
 
     <!-- Prepend any derived special notes to the appropriate field -->
     <eval index="3" phase="Render" priority="2000"><![CDATA[
@@ -542,7 +542,7 @@
         mark ourselves as not satisfying the requirement -->
     <eval index="1" phase="Final" priority="5000"><![CDATA[
       ~if the minimum strength is satisfied, there's nothing to do
-      doneif (field[defStrReq].value <= #trait[attrStr])
+      doneif (field[defStrReq].value <= #trait[aSTR])
 
       ~assign a tag to indicate the requirement isn't met
       perform assign[Helper.BadStrReq]
@@ -573,7 +573,7 @@
         validif (@ispick <> 0)
 
         ~verify whether we meet the strength requirement
-        validif (#trait[attrStr] >= altthing.field[defStrReq].value)
+        validif (#trait[aSTR] >= altthing.field[defStrReq].value)
         ]]></validate>
       </prereq>
 

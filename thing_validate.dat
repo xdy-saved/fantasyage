@@ -41,7 +41,7 @@
     <!-- Make sure that we have all CPs spent -->
     <evalrule index="1" phase="Validate" priority="8000" severity="warning" message="Unused CPs remain"><![CDATA[
       ~we have a negative or zero quantity left, we're good
-      validif (#resleft[resCP] <= 0)
+      validif (#resleft[resAP] <= 0)
 
       ~mark associated tabs as invalid
       container.panelvalid[basics] = 0
@@ -50,7 +50,7 @@
     <!-- Make sure that we don't have too many CPs spent -->
     <evalrule index="2" phase="Validate" priority="8000" message="Too many CPs spent"><![CDATA[
       ~we have a positive or zero quantity left, we're good
-      validif (#resleft[resCP] >= 0)
+      validif (#resleft[resAP] >= 0)
 
       ~mark associated tabs as invalid
       container.panelvalid[basics] = 0

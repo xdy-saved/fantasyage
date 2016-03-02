@@ -12,9 +12,9 @@
 
   <!-- Attribute editthing -->
   <editthing
-    compset="Attribute"
-    name="Attribute"
-    prefix="attr"
+    compset="Ability"
+    name="Abilities"
+    prefix="a"
     description="Attributes are incredibly simple. They have a minimum and maximum value.{br}They also have an optional short name and/or abbreviation."
     summary="Defines an Attribute upon which starting CPs can be spent by a character.">
     <inputthing
@@ -37,7 +37,7 @@
 
   <!-- Skill editthing -->
   <editthing
-    compset="Skill"
+    compset="Focus"
     name="Skill"
     prefix="sk"
     description="As basic traits, Skills have a minimum and maximum value, as well as{br}an optional short name and/or abbreviation."
@@ -60,13 +60,13 @@
     <inputthing
       name="Linked Attribute for Skill"
       helptext="Select the attribute used to calculate the dice pool for this skill.">
-      <it_linkage compset="Attribute" linkage="attribute"/>
+      <it_linkage compset="Ability" linkage="ability"/>
       </inputthing>
     </editthing>
 
 
   <!-- Ability editthing -->
-  <editthing
+  <!-- <editthing
     compset="Ability"
     name="Abilities"
     prefix="ab"
@@ -91,7 +91,7 @@
       name="Creation Only?"
       helptext="Specify whether this special ability can only be selected for a character during creation.">
       <it_tagcheck group="User" tag="CreateOnly"/>
-      </inputthing>
+  </inputthing>-->
 <!-- These facets of special abilities are not currently used for anything so they are commented out.
     <inputthing
       name="Minimum Value"
@@ -109,7 +109,7 @@
       <it_field field="trtAbbrev"/>
       </inputthing>
 -->
-    </editthing>
+    <!-- </editthing> -->
 
 
   <!-- Race editthing -->

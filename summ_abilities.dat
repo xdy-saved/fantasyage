@@ -34,7 +34,7 @@
     id="smSkill"
     style="tblInvisSm">
     <table_fixed
-      component="Skill"
+      component="Focus"
       showtemplate="smTrait"
       scrollable="no">
       <headertitle><![CDATA[

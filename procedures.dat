@@ -628,7 +628,7 @@
     var roll as string
     foreach pick in hero where "DashTacCon.Rolls"
       if (eachpick.tagis[component.Skill] <> 0) then
-        roll = eachpick.field[sklRoll].text & "{text clrsecond}  (" & eachpick.field[trtFinal].text & " + " & eachpick.linkage[attribute].field[name].text & " " & eachpick.linkage[attribute].field[trtFinal].text & "){text clrreset}"
+        roll = eachpick.field[sklRoll].text & "{text clrsecond}  (" & eachpick.field[trtFinal].text & " + " & eachpick.linkage[ability].field[name].text & " " & eachpick.linkage[ability].field[trtFinal].text & "){text clrreset}"
       else
         roll = "????"
         endif
@@ -720,7 +720,7 @@
     final &= "{br}"
 
     ~output attributes
-    foreach pick in hero from Attribute
+    foreach pick in hero from Ability
       final &= eachpick.field[name].text & ": {b}" & eachpick.field[trtFinal].text & "{/b}{br}"
       nexteach
 

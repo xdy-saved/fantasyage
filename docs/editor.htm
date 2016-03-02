@@ -154,17 +154,17 @@ Worlds data files define a number of macros that can be used as &quot;shorthand&
 <li class="bullet"><font class="strong">#trait[<i>trait_id</i>]</font>
 
   <p class="body">Accesses the &quot;trtFinal&quot; field of the trait with the specified unique id given by &quot;trait_id&quot;. For example, to access the &quot;trtFinal&quot; field on the
-&quot;Strength&quot; attribute, the syntax would be &quot;#trait[attrStr]&quot;.<p class="body">Equivalent to: hero.child[<i>trait_id</i>].field[trtFinal].value<li class="bullet"><font class="strong">#traitfound[<i>trait_id</i>]</font>
+&quot;Strength&quot; attribute, the syntax would be &quot;#trait[aSTR]&quot;.<p class="body">Equivalent to: hero.child[<i>trait_id</i>].field[trtFinal].value<li class="bullet"><font class="strong">#traitfound[<i>trait_id</i>]</font>
 
-  <p class="body">Accesses the &quot;trtFinal&quot; field of the trait with the specified unique id given by &quot;trait_id&quot;. For example, to access the &quot;trtFinal&quot; field on the &quot;Strength&quot; attribute, the syntax would be &quot;#traitfound[attrStr]&quot;. If the trait does not exist
+  <p class="body">Accesses the &quot;trtFinal&quot; field of the trait with the specified unique id given by &quot;trait_id&quot;. For example, to access the &quot;trtFinal&quot; field on the &quot;Strength&quot; attribute, the syntax would be &quot;#traitfound[aSTR]&quot;. If the trait does not exist
 	within the hero, such as when referencing skills that a hero may or may not possess, a value of zero is returned instead of an error being reported.<p class="body">Equivalent to: hero.childfound[<i>trait_id</i>].field[trtFinal].value<li class="bullet">
 <font class="strong">#traitbonus[<i>trait_id</i>]</font>
 
   <p class="body">Accesses the &quot;trtBonus&quot; field of the trait with the specified unique id given by &quot;trait_id&quot;. For example, to access the &quot;trtBonus&quot; field on the
-&quot;Strength&quot; attribute, the syntax would be &quot;#traitbonus[attrStr]&quot;.<p class="body">Equivalent to: hero.child[<i>trait_id</i>].field[trtBonus].value<li class="bullet"><font class="strong">#traitinplay[<i>trait_id</i>]</font>
+&quot;Strength&quot; attribute, the syntax would be &quot;#traitbonus[aSTR]&quot;.<p class="body">Equivalent to: hero.child[<i>trait_id</i>].field[trtBonus].value<li class="bullet"><font class="strong">#traitinplay[<i>trait_id</i>]</font>
 
   <p class="body">Accesses the &quot;trtInPlay&quot; field of the trait with the specified unique id given by &quot;trait_id&quot;. For example, to access the &quot;trtInPlay&quot; field on the
-&quot;Strength&quot; attribute, the syntax would be &quot;#traitinplay[attrStr]&quot;.<p class="body">Equivalent to: hero.child[<i>trait_id</i>].field[trtInPlay].value<li class="bullet"><font class="strong">#resmax[<i>res_id</i>]</font>
+&quot;Strength&quot; attribute, the syntax would be &quot;#traitinplay[aSTR]&quot;.<p class="body">Equivalent to: hero.child[<i>trait_id</i>].field[trtInPlay].value<li class="bullet"><font class="strong">#resmax[<i>res_id</i>]</font>
 
 <p class="body">Accesses the &quot;resMax&quot; field of the resource specified by <i>res_id</i>. For example, to get the number of ability slots the character possesses, the syntax would be &quot;#resmax[resAbility]&quot;.
 <p class="body">Equivalent to: hero.child[<i>res_id</i>].field[resMax].value<li class="bullet"><font class="strong">#trkmax[<i>trk_id</i>]</font>

@@ -47,6 +47,6 @@ Temporary Items
 .apdisk
 
 #Hero Lab compiled files that should not be used by others.
-.hlz
+*.hlz
 timing.xml
 unused.xml

@@ -71,9 +71,9 @@
         if (empty(hero.playername) = 0) then
           @text = "Player: " & hero.playername & "{br}"
           endif
-        @text &= "{size 36}Character Points: " & #resmax[resCP]
-        if (#resleft[resCP] <> 0) then
-          @text &= " (" & #resleft[resCP] & " left)"
+        @text &= "{size 36}Character Points: " & #resmax[resAP]
+        if (#resleft[resAP] <> 0) then
+          @text &= " (" & #resleft[resAP] & " left)"
           endif
         @text &= "{br}{align left}{/b}"
         temp = hero.findchild[Race].field[name].text
@@ -108,7 +108,7 @@
     id="oAttribute"
     style="outNormal">
     <output_table
-      component="Attribute"
+      component="Ability"
       showtemplate="oAttrPick"
       headertemplate="oAttrPick"
       showsortset="explicit">
@@ -183,7 +183,7 @@
     id="oSkills"
     style="outNormal">
     <output_table
-      component="Skill"
+      component="Focus"
       showtemplate="oSkillPick">
       <list><![CDATA[
         ]]></list>
@@ -321,7 +321,7 @@
   <template
     id="oAttrPick"
     name="Output Attributes Table"
-    compset="Attribute"
+    compset="Ability"
     marginvert="10">
 
     <portal

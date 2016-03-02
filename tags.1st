@@ -167,7 +167,7 @@
   <group
     id="Hide">
     <value id="Attribute"/>       <!-- Indicates an attribute that is not user selectable -->
-    <value id="Skill"/>           <!-- Indicates a skill that is not user selectable -->
+    <value id="Focus"/>           <!-- Indicates a skill that is not user selectable -->
     <value id="InPlay"/>          <!-- Indicates an in-play adjustment that is hidden from view -->
     <value id="Ability"/>         <!-- Indicates an ability that is not user selectable (i.e. conferred by race or similar mechanism) -->
     <value id="Special"/>         <!-- Indicates a trait that is hidden from the Special tab -->

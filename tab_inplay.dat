@@ -211,7 +211,7 @@
   <template
     id="ipActivate"
     name="Activated Abilities"
-    compset="Ability"
+    compset="Talent"
     marginhorz="3"
     marginvert="3">
 

@@ -166,10 +166,10 @@
 
     <!-- Starting character points to allocate -->
     <field
-      id="acStartCP"
+      id="acStartAP"
       name="Character Points"
       type="user"
-      defvalue="250">
+      defvalue="0">
       </field>
 
     <!-- Starting ability slots to allocate -->

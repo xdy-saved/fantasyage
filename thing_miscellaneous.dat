@@ -38,8 +38,8 @@
 
   <!-- Character point resource to track the pool of character points being spent -->
   <thing
-    id="resCP"
-    name="Character Points"
+    id="resAP"
+    name="Ability Points"
     compset="Resource">
 
     <!-- Automatically add the resource to every actor -->
@@ -47,7 +47,7 @@
 
     <!-- Use the starting character points as our initial maximum -->
     <eval index="1" phase="Setup" priority="1000"><![CDATA[
-      field[resMax].value = herofield[acStartCP].value
+      field[resMax].value = herofield[acStartAP].value
       ]]></eval>
     </thing>
 

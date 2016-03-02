@@ -9,49 +9,49 @@
 <document signature="Hero Lab Data">
 
   <!-- Sample Skill -->
-  <thing
+  <!-- <thing
     id="skSample"
     name="Sample"
-    compset="Skill"
+    compset="Focus"
     isunique="yes"
     description="Description goes here">
-    <fieldval field="trtAbbrev" value="Sam"/>
+    <fieldval field="trtAbbrev" value="Sam"/> -->
 
     <!-- If this skill should be shown as an out-of-combat skill on the TacCon, assign this tag
     <tag group="DashTacCon" tag="NonCombat"/>
     -->
 
     <!-- Specify the attribute to which this skill is linked -->
-    <link linkage="attribute" thing="attrSam"/>
-    </thing>
+    <!-- <link linkage="attribute" thing="attrSam"/>
+    </thing> -->
 
   <!-- Melee Skill
         NOTE! This skill is included because melee weapons rely on it to calculate
               attack values.
   -->
-  <thing
+  <!-- <thing
     id="skMelee"
     name="Melee"
-    compset="Skill"
+    compset="Focus"
     isunique="yes"
     description="Description goes here">
     <fieldval field="trtAbbrev" value="Mel"/>
     <link linkage="attribute" thing="attrSam"/>
-    </thing>
+    </thing> -->
 
   <!-- Shooting Skill
         NOTE! This skill is included because ranged weapons rely on it to calculate
               attack values.
   -->
-  <thing
+  <!-- <thing
     id="skShooting"
     name="Shooting"
-    compset="Skill"
+    compset="Focus"
     isunique="yes"
     description="Description goes here">
     <fieldval field="trtAbbrev" value="Sht"/>
     <link linkage="attribute" thing="attrSam"/>
-    </thing>
+    </thing> -->
 
 
   </document>

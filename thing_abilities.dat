@@ -1,76 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- This file contains the assortment of special abilities for the game system.
-      Abilities confer their effects through scripts that apply the necessary changes
-      to the appropriate traits.
-
-      Abilities influence traits, so all adjustments must be applied prior to when the
-      final trait value is calculated. The script timing used below (PreTraits/5000)
-      ensures that we satisfy this requirement. All abilities should be designated as
-      "unique" so that they can only be selected a single time by the user.
+<!-- This file contains the assortment of attributes possessed by every actor for the
+      game system. The display order of attributes is controlled via the assignment of
+      an "explicit" tag with the relative position of each.
 -->
 
 <document signature="Hero Lab Data">
 
-  <!-- Sample Ability -->
+  <!-- Sample Attribute
+  -->
   <thing
-    id="abSample"
-    name="Sample"
+    id="aACC"
+    name="Accuracy"
     compset="Ability"
     isunique="yes"
     description="Description goes here">
-
-    <!-- If checkbox selection is needed, make sure the compset includes "UserSelect"
-          component and define this field appropriately.
-    <fieldval field="usrChkText" value="Menu1"/>
-    -->
-
-    <!-- If thing-based menu selection is needed, make sure the compset includes
-          "UserSelect" component and define these fields and tags as appropriate.
-    <fieldval field="usrLabel1" value="Menu1"/>
-    <fieldval field="usrCandid1" value="component.Attribute"/>
-    <fieldval field="usrLabel2" value="Menu2"/>
-    <fieldval field="usrCandid2" value="component.Skill"/>
-    <tag group="ChooseSrc1" tag="Hero"/>
-    <tag group="ChooseSrc2" tag="Thing"/>
-    -->
-
-    <!-- If array-based menu selection is needed, make sure the compset includes
-          "UserSelect" component and define these fields as appropriate.
-    <fieldval field="usrLabelAr" value="Menu1"/>
-    <arrayval field="usrArray" index="0" value="Choice #1"/>
-    <arrayval field="usrArray" index="1" value="Choice #2"/>
-    <arrayval field="usrArray" index="2" value="Choice #3"/>
-    -->
-
-    <!-- If the ability can only be selected at character creation, assign this tag
-    <tag group="User" tag="CreateOnly"/>
-    -->
-
-    <!-- If the ability should not appear for normal selection, assign this tag
-    <tag group="Hide" tag="Ability"/>
-    -->
-
-    <!-- If the ability can be activated by the user to apply its effects, assign this tag
-    <tag group="User" tag="Activation"/>
-    -->
-
-    <!-- Define any script needed to apply changes to other traits
-    <eval value="1" phase="PreTraits" priority="5000">
-      <before name="Calc trtFinal"/><![CDATA[
-      ~if we haven't been activated, just get out (only needed for user-activated abilities)
-      doneif (field[abilActive].value = 0)
-
-      ~apply whatever adjustment(s) are needed here
-      ~#traitbonus[trDefense] += 1
-      ]]></eval>
-    -->
-
-    <!-- Define any appropriate pre-requisites for the ability
-    <exprreq iserror="yes" message="Strength 5 required."><![CDATA[#trait[attrStr] >= 5]]></exprreq>
-    -->
-
+    <fieldval field="trtAbbrev" value="Acc"/>
+    <tag group="explicit" tag="1"/>
     </thing>
 
+    <thing
+      id="aCOM"
+      name="Communication"
+      compset="Ability"
+      isunique="yes"
+      description="Description goes here">
+      <fieldval field="trtAbbrev" value="Com"/>
+      <tag group="explicit" tag="2"/>
+      </thing>
+
+    <thing
+      id="aCON"
+      name="Constitution"
+      compset="Ability"
+      isunique="yes"
+      description="Description goes here">
+        <fieldval field="trtAbbrev" value="Con"/>
+        <tag group="explicit" tag="3"/>
+        </thing>
+
+    <thing
+      id="aDEX"
+      name="Dexterity"
+      compset="Ability"
+      isunique="yes"
+      description="Description goes here">
+      <fieldval field="trtAbbrev" value="Dex"/>
+      <tag group="explicit" tag="4"/>
+    </thing>
+
+    <thing
+      id="aFIG"
+      name="Fighting"
+      compset="Ability"
+      isunique="yes"
+      description="Description goes here">
+      <fieldval field="trtAbbrev" value="Fig"/>
+      <tag group="explicit" tag="5"/>
+    </thing>
+
+    <thing
+      id="aINT"
+      name="Intelligence"
+      compset="Ability"
+      isunique="yes"
+      description="Description goes here">
+      <fieldval field="trtAbbrev" value="Int"/>
+      <tag group="explicit" tag="6"/>
+    </thing>
+
+    <thing
+      id="aPER"
+      name="Perception"
+      compset="Ability"
+      isunique="yes"
+      description="Description goes here">
+      <fieldval field="trtAbbrev" value="Per"/>
+      <tag group="explicit" tag="7"/>
+    </thing>
+
+
+   <thing
+    id="aSTR"
+    name="Strength"
+    compset="Ability"
+    isunique="yes"
+    description="Description goes here">
+    <fieldval field="trtAbbrev" value="Str"/>
+    <tag group="explicit" tag="8"/>
+    </thing>
+
+    <thing
+      id="aWILL"
+      name="Willpower"
+      compset="Ability"
+      isunique="yes"
+      description="Description goes here">
+      <fieldval field="trtAbbrev" value="Will"/>
+      <tag group="explicit" tag="9"/>
+    </thing>
 
   </document>

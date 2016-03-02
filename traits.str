@@ -118,20 +118,31 @@
         Each attribute possessed by the actor derives from this component
   -->
   <component
-    id="Attribute"
-    name="Attribute"
+    id="Ability"
+    name="Ability"
     autocompset="no">
+
+    <identity group="IsAbility" />
+    <identity group="PrimAbil" />
+    <identity group="SecAbil" />
+    <identity group="FocusAbil" />
 
     <!-- Attributes have a minimum trait value of 1 -->
     <eval index="1" phase="Initialize" priority="3000"><![CDATA[
-      field[trtMinimum].value = 1
+      if (herofield[acStartAP].value = 0) then
+        field[trtMinimum].value = -2
+        field[trtMaximum].value = 4
+      else
+        field[trtMinimum].value = 0
+        field[trtMaximum].value = 3
+        endif
       ]]></eval>
 
     <!-- Each attribute point above one that is allocated by the user costs 7 CP -->
     <eval index="2" phase="Traits" priority="10000">
       <before name="Calc resLeft"/>
       <after name="Bound trtUser"/><![CDATA[
-      hero.child[resCP].field[resSpent].value += (field[trtUser].value - 1) * 7
+      hero.child[resAP].field[resSpent].value += field[trtUser].value
       ]]></eval>
 
     </component>
@@ -141,8 +152,8 @@
         Each skill derives from this component
   -->
   <component
-    id="Skill"
-    name="Skill"
+    id="Focus"
+    name="Ability Focus"
     autocompset="no">
 
     <!-- Net final roll that includes the value of the linked attribute -->
@@ -155,35 +166,31 @@
         ~only access the linkage if the skill is directly on the hero; if not, it is
         ~likely within an advancement gizmo and no linkage will exist there
         if (container.ishero <> 0) then
-          @value = field[trtFinal].value + linkage[attribute].field[trtFinal].value
+          @value = field[trtFinal].value + linkage[ability].field[trtFinal].value
           endif
         ]]></calculate>
       </field>
 
     <!-- Each skill is associated with a specific attribute that must be identified -->
-    <linkage linkage="attribute" optional="no"/>
+    <linkage linkage="ability" optional="no"/>
 
     <!-- Each skill needs its own identity tag so existing skills can be identified during advancement -->
-    <identity group="Skill"/>
+    <identity group="Focus"/>
 
     <!-- Every skill is shown on the "Rolls" mouse-over on the Dashboard/TacCon -->
     <tag group="DashTacCon" tag="Rolls"/>
 
     <!-- Track the skill on the actor -->
     <eval index="1" phase="Setup" priority="5000"><![CDATA[
-      perform forward[Skill.?]
+      perform forward[Focus.?]
       ]]></eval>
 
-    <!-- Each skill point that is allocated by the user costs 2 CP -->
-    <eval index="2" phase="Traits" priority="10000">
-      <before name="Calc resLeft"/>
-      <after name="Bound trtUser"/><![CDATA[
-      ~if this skill is not added directly to the hero (i.e. an advance), skip it entirely
-      doneif (origin.ishero = 0)
+    <eval index="2" phase="Setup" priority="5000"><![CDATA[
+        ~Assign tag of linked attribute
+        perform linkage[ability].pulltags[FocusAbil.?]
 
-      ~adjust the resource appropriately
-      hero.child[resCP].field[resSpent].value += field[trtUser].value * 2
-      ]]></eval>
+
+        ]]></eval>
 
     </component>
 
@@ -192,10 +199,9 @@
         Each special ability derives from this component
   -->
   <component
-    id="Ability"
-    name="Ability"
-    autocompset="no"
-    panellink="abilities">
+    id="Activation"
+    name="Activation"
+    autocompset="no">
 
     <!-- Activation state of ability - we're not activated by default -->
     <field
@@ -206,27 +212,9 @@
       maxvalue="1">
       </field>
 
-    <!-- Each ability needs its own identity tag to detect cascading dependencies via prereqs -->
-    <identity group="Ability"/>
-
     <!-- Setup an identity tag group to track all activated abilities and adjustments -->
     <identity group="Activated"/>
 
-    <!-- All abilities get the same tag for sorting purposes -->
-    <tag group="SpecialTab" tag="Ability"/>
-
-    <!-- Each ability that is added by the user costs 1 slot -->
-    <eval index="1" phase="Setup" priority="5000"><![CDATA[
-      ~we must ignore bootstrapped abilities from races and abilities added via advances
-      if (isuser + origin.ishero >= 2) then
-        hero.child[resAbility].field[resSpent].value += 1
-        endif
-      ]]></eval>
-
-    <!-- Track the ability on the actor -->
-    <eval index="2" phase="Setup" priority="5000"><![CDATA[
-      perform forward[Ability.?]
-      ]]></eval>
 
     <!-- If the ability is activated, designate it appropriately -->
     <eval index="3" phase="Setup" priority="100"><![CDATA[
@@ -241,20 +229,6 @@
         perform forward[Activated.?]
         endif
       ]]></eval>
-
-    <!-- Verify abilities that are only available at creation -->
-    <prereq message="Only available during character creation.">
-      <validate><![CDATA[
-        ~we only report this as a failure things (once added, we assume the user knows best)
-        validif (@ispick <> 0)
-
-        ~if we are not designated as creation only, we're valid
-        validif (altthing.tagis[User.CreateOnly] = 0)
-
-        ~if the mode is creation, we're valid
-        validif (state.iscreate <> 0)
-        ]]></validate>
-      </prereq>
 
     </component>
 
@@ -300,6 +274,40 @@
 
     </component>
 
+  <component
+      id="Background"
+      name="Background">
+
+      <identity group="Background" />
+
+      <eval index="1" phase="Setup" priority="5000"><![CDATA[
+        perform forward[Background.?]
+        ]]></eval>
+    </component>
+
+    <component
+        id="Social"
+        name="Social Class">
+
+        <identity group="Social" />
+
+        <eval index="1" phase="Setup" priority="5000"><![CDATA[
+          perform forward[Social.?]
+          ]]></eval>
+      </component>
+
+    <component
+        id="Talent"
+        name="Talent"
+        autocompset="no">
+
+        <identity group="Talent" />
+
+        <eval index="1" phase="Setup" priority="5000"><![CDATA[
+            perform forward[Talent.?]
+            ]]></eval>
+        </component>
+
 
   <!-- Define various component sets associated with the components defined above.
   -->
@@ -308,31 +316,31 @@
 
   <!-- Attribute - all attributes derive from this compset -->
   <compset
-    id="Attribute"
+    id="Ability"
     forceunique="yes">
-    <compref component="Attribute"/>
+    <compref component="Ability"/>
     <compref component="Trait"/>
     <compref component="CanAdvance"/>
     </compset>
 
   <!-- Skill - all skills derive from this compset -->
   <compset
-    id="Skill"
+    id="Focus"
     forceunique="yes">
-    <compref component="Skill"/>
+    <compref component="Focus"/>
     <compref component="Trait"/>
     <compref component="Domain"/>
     <compref component="CanAdvance"/>
     </compset>
 
   <!-- Ability - all abilities derive from this compset -->
-  <compset
+  <!-- <compset
     id="Ability">
     <compref component="Ability"/>
     <compref component="Trait"/>
     <compref component="SpecialTab"/>
     <compref component="CanAdvance"/>
-    </compset>
+    </compset> -->
 
   <!-- Trait - all derived traits are based on this compset -->
   <compset
@@ -347,6 +355,12 @@
     forceunique="yes">
     <compref component="Race"/>
     </compset>
+
+  <compset
+      id="Talent">
+      <compref component="Talent" />
+      <compref component="Activation"/>
+  </compset>
 
 
   </document>

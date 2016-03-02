@@ -15,7 +15,7 @@
 
   <!-- Add all attributes to the actor -->
   <enmasse><![CDATA[
-    component.Attribute
+    component.Ability
     ]]></enmasse>
 
   <!-- Add all skills to the actor -->

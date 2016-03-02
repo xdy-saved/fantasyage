@@ -150,21 +150,9 @@
       id="menucp"
       style="menuNormal">
       <menu_literal
-        field="acStartCP">
-        <choice value="225" display="Character Points: 225 Points"/>
-        <choice value="250" display="Character Points: 250 Points"/>
-        <choice value="275" display="Character Points: 275 Points"/>
-        </menu_literal>
-      </portal>
-
-    <portal
-      id="menuabil"
-      style="menuNormal">
-      <menu_literal
-        field="acStartAbi">
-        <choice value="1" display="Abilities: 1 Slots"/>
-        <choice value="2" display="Abilities: 2 Slots"/>
-        <choice value="3" display="Abilities: 3 Slots"/>
+        field="acStartAP">
+        <choice value="0" display="Pick/Roll Ability Scores"/>
+        <choice value="10" display="Buy Ability Scores"/>
         </menu_literal>
       </portal>
 
@@ -172,7 +160,7 @@
       id="lblcash"
       style="lblNormal">
       <label_literal
-        text="Starting Cash ($):">
+        text="Starting Gold (GP):">
         </label_literal>
       </portal>
 
@@ -202,11 +190,11 @@
       perform portal[menucp].alignrel[ttob,label,10]
 
       ~position the ability menu beneath the character points
-      portal[menuabil].width = width
-      perform portal[menuabil].alignrel[ttob,menucp,15]
+      ~portal[menuabil].width = width
+      ~perform portal[menuabil].alignrel[ttob,menucp,15]
 
       ~position the starting cash beneath the ability slots
-      perform portal[cash].alignrel[ttob,menuabil,15]
+      perform portal[cash].alignrel[ttob,menucp,15]
       perform portal[lblcash].centeron[vert,cash]
       portal[cash].width = 50
       portal[lblcash].left = (width - portal[lblcash].width - portal[cash].width - 10) / 2

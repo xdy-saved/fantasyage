@@ -20,7 +20,7 @@
     id="smAttrib"
     style="tblInvisSm">
     <table_fixed
-      component="Attribute"
+      component="Ability"
       showtemplate="smTrait"
       showsortset="explicit"
       scrollable="no">

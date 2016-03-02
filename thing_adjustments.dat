@@ -25,7 +25,7 @@
   <!-- Attribute Adjustment -->
   <thing
     id="adjAttr"
-    name="Attribute"
+    name="Ability"
     compset="Adjustment"
     description="Select this adjustment to change one of your attributes.">
     <fieldval field="adjUsePick" value="1"/>
@@ -97,12 +97,12 @@
     <tag group="AdjustShow" tag="Menu"/>
     <tag group="Helper" tag="UserAdjust"/>
     <tag group="InPlay" tag="TempOK"/>
-    <eval phase="Setup" priority="8000">
+    <!-- <eval phase="Setup" priority="8000">
       <before name="Calc wpNetAtk"/><![CDATA[
       if (tagis[Helper.Activated] <> 0) then
         field[adjChosen].chosen.field[wpBonus].value += field[adjUser].value
         endif
-      ]]></eval>
+      ]]></eval> -->
     </thing>
 
   <!-- CP Adjustment -->
@@ -114,12 +114,12 @@
     <tag group="AdjustShow" tag="Increment"/>
     <tag group="Helper" tag="UserAdjust"/>
     <tag group="InPlay" tag="PermOK"/>
-    <eval phase="Setup" priority="8000">
+    <!-- <eval phase="Setup" priority="8000">
       <before name="Calc wpNetAtk"/><![CDATA[
       if (tagis[Helper.Activated] <> 0) then
-        #resmax[resCP] += field[adjUser].value
+        #resmax[resAP] += field[adjUser].value
         endif
-      ]]></eval>
+      ]]></eval> -->
     </thing>
 
   <!-- Ability Slot Adjustment -->
@@ -131,12 +131,12 @@
     <tag group="AdjustShow" tag="Increment"/>
     <tag group="Helper" tag="UserAdjust"/>
     <tag group="InPlay" tag="PermOK"/>
-    <eval phase="Setup" priority="8000">
+    <!-- <eval phase="Setup" priority="8000">
       <before name="Calc wpNetAtk"/><![CDATA[
       if (tagis[Helper.Activated] <> 0) then
         hero.child[resAbility].field[resMax].value += field[adjUser].value
         endif
-      ]]></eval>
+      ]]></eval> -->
     </thing>
 
   <!-- Power Points Adjustment -->
@@ -148,12 +148,12 @@
     <tag group="AdjustShow" tag="Increment"/>
     <tag group="Helper" tag="UserAdjust"/>
     <tag group="InPlay" tag="PermOK"/>
-    <eval phase="Setup" priority="8000">
+    <!-- <eval phase="Setup" priority="8000">
       <before name="Calc wpNetAtk"/><![CDATA[
       if (tagis[Helper.Activated] <> 0) then
         #traitinplay[trPowerPts] += field[adjUser].value
         endif
-      ]]></eval>
+      ]]></eval> -->
     </thing>
 
   <!-- Counter Adjustment -->
