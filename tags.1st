@@ -39,6 +39,8 @@
     <value id="NoMinimum"/>   <!-- Resource does NOT need to be fully spent to avoid reporting a warning -->
     <value id="CustomItem"/>  <!-- Identifies a thing that has a user customizable name -->
     <value id="NoPersText"/>  <!-- User entered no background text -->
+    <value id="CanRead" />    <!-- Identifies if a hero can read a language -->
+    <value id="CanWrite" />   <!-- Identifies if a hero can write in a specific language -->
     </group>
 
   <!-- User group - general helper tags that can be assigned by users via the Editor
@@ -154,6 +156,7 @@
     <value id="smAbility"/>
     <value id="smArmory"/>
     <value id="smStatbl"/>
+    <value id="class" />
     </group>
 
   <!-- Hide group - controls whether things are hidden in certain contexts
@@ -172,6 +175,7 @@
     <value id="Ability"/>         <!-- Indicates an ability that is not user selectable (i.e. conferred by race or similar mechanism) -->
     <value id="Special"/>         <!-- Indicates a trait that is hidden from the Special tab -->
     <value id="Tracker"/>         <!-- Indicates a tracker that is hidden from the In-Play tab (and likely shown somewhere else) -->
+    <value id="Class" />
     </group>
 
   <!-- Show group - controls whether things are shown in certain contexts
@@ -311,6 +315,50 @@
     <value id="Ability" order="10"/>
     <value id="Unknown" order="80"/>
     </group>
+
+  <group
+      id="Arcana">
+      <value id="Air" />
+      <value id="Divination" />
+      <value id="Earth" />
+      <value id="Fate" />
+      <value id="Fire" />
+      <value id="Healing" />
+      <value id="Heroic" />
+      <value id="Lightning" />
+      <value id="Power" />
+      <value id="Shadow" />
+      <value id="Water" />
+      <value id="Wood" />
+  </group>
+
+  <group
+      id="SpellType">
+      <value id="Attack" />
+      <value id="Defense" />
+      <value id="Enhance" name="Enhancement" />
+      <value id="Utility" />
+  </group>
+
+  <group
+      id="CastTime">
+      <value id="Major" name="Major Action" />
+      <value id="Minor" name="Minnor Action" />
+      <value id="Minute1" name="1 Minute" />
+  </group>
+
+  <group
+      id="MPCost"
+      maxvalue="50">
+      <value id="Plus" name="+" />
+  </group>
+
+  <group
+      id="SpellTarg"
+      maxvalue="100">
+  </group>
+
+
 
 
   </document>

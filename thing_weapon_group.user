@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="wgSword" name="Swords" compset="WepGroup" uniqueness="unique"></thing>
+  <thing id="wgLasers" name="Lasers" compset="WepGroup" uniqueness="unique">
+    <usesource source="Titansgrav" parent="UserParent" name="Titansgrave"/>
+    </thing>
+  </document>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="cFighter" name="Fighter" description="This is a fighter" compset="Class" uniqueness="unique">
+    <tag group="PrimAbil" tag="aCON"/>
+    <tag group="PrimAbil" tag="aDEX"/>
+    <tag group="PrimAbil" tag="aFIG"/>
+    <tag group="PrimAbil" tag="aSTR"/>
+    <tag group="SecAbil" tag="aACC"/>
+    <tag group="SecAbil" tag="aINT"/>
+    <tag group="SecAbil" tag="aPER"/>
+    <tag group="SecAbil" tag="aWILL"/>
+    <tag group="SecAbil" tag="aCOM"/>
+    <bootstrap thing="wgLasers">
+      <containerreq phase="Initialize" priority="500">source.Titansgrav</containerreq>
+      </bootstrap>
+    <bootstrap thing="wgSword"></bootstrap>
+    </thing>
+  </document>

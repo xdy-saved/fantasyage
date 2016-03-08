@@ -76,7 +76,7 @@
     <fieldval field="grCost" value="100"/>
     <fieldval field="gearWeight" value="1"/>
     <!-- Define any script needed to confer the effects of the gear
-    <eval value="1" phase="PreTraits" priority="5000">
+    <eval value="1" phase="PreAbility" priority="5000">
       <before name="Calc trtFinal"/><![CDATA[
       ~#traitbonus[attrSam] += 1
       ]]></eval>

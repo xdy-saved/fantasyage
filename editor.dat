@@ -111,6 +111,44 @@
 -->
     <!-- </editthing> -->
 
+  <editthing
+      compset="Class"
+      name="Class"
+      prefix="c"
+      description="This is for classes."
+      summary="This is for classes.">
+
+      <inputthing
+          name="Primary Abilities"
+          helptext="Select the primary ability scores for the class.">
+          <it_taglist group="PrimAbil" tag="?" />
+      </inputthing>
+
+      <inputthing
+          name="Secondary Abilities"
+          helptext="Select the secondary ability scores for the class.">
+          <it_taglist group="SecAbil" tag="?" />
+      </inputthing>
+
+      <inputthing
+          name="Weapon Groups"
+          helptext="Select the weapon groups granted to the class.">
+          <it_bootlist compset="WepGroup" />
+      </inputthing>
+
+
+
+
+  </editthing>
+
+  <editthing
+      compset="WepGroup"
+      name="Weapon Group"
+      prefix="wg"
+      description="Weapon groups."
+      summary="Weapon groups.">
+
+  </editthing>
 
   <!-- Race editthing -->
   <editthing

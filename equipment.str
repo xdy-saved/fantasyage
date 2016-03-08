@@ -555,7 +555,7 @@
       ]]></eval>
 
     <!-- Apply effects of the equipped armor/shield -->
-    <eval index="2" phase="PreTraits" priority="5000">
+    <eval index="2" phase="PreAbility" priority="5000">
       <before name="Calc trtFinal"/>
       <after name="Equipped"/><![CDATA[
       ~if this gear is not equipped, skip it

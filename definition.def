@@ -147,6 +147,15 @@ These data files provide a starting framework for implementing support for any g
     name="trkmax"
     param1="tracker"
     result="hero.child[#tracker].field[trkMax].value"/>
+  <scriptmacro
+      name="raceabilbonus"
+      param1="ability"
+      param2="bonus"
+      result="hero.child[#ability].field[aRaceBonus].value += #bonus" />
+  <scriptmacro
+      name="abilityvalue"
+      param1="ability"
+      result="hero.child[#ability].field[trtFinal].value" />
 
   <!-- Decoration character used in summary panel headertitle scripts -->
   <scriptmacro
@@ -228,17 +237,23 @@ These data files provide a starting framework for implementing support for any g
     </phase>
 
   <phase
-    id="PreTraits"
-    name="Pre-Traits"
+    id="PreAbility"
+    name="Pre-Ability"
     description="Adjustments to traits before they are finalized">
     </phase>
 
   <!-- NOTE! All Health calculations are assumed to occur within the 5000-5999 priority range during this phase. -->
   <phase
-    id="Traits"
-    name="Traits"
+    id="Ability"
+    name="Ability"
     description="Finalization of trait values">
     </phase>
+
+  <phase
+      id="PostAbil"
+      name="Post-Ability"
+      description="This that happen after Ability is finalized, but before all values are finalized.">
+  </phase>
 
   <phase
     id="Final"

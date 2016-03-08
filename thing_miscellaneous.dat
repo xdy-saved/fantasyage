@@ -64,7 +64,7 @@
 
     <!-- Use the starting ability slots as our initial maximum -->
     <eval index="1" phase="Setup" priority="1000"><![CDATA[
-      field[resMax].value = herofield[acStartAbi].value
+      field[resMax].value = 1
       ]]></eval>
     </thing>
 

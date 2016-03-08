@@ -5,7 +5,7 @@
       to the appropriate traits.
 
       Abilities influence traits, so all adjustments must be applied prior to when the
-      final trait value is calculated. The script timing used below (PreTraits/5000)
+      final trait value is calculated. The script timing used below (PreAbility/5000)
       ensures that we satisfy this requirement. All abilities should be designated as
       "unique" so that they can only be selected a single time by the user.
 -->
@@ -56,7 +56,7 @@
     -->
 
     <!-- Define any script needed to apply changes to other traits
-    <eval value="1" phase="PreTraits" priority="5000">
+    <eval value="1" phase="PreAbility" priority="5000">
       <before name="Calc trtFinal"/><![CDATA[
       ~if we haven't been activated, just get out (only needed for user-activated abilities)
       doneif (field[abilActive].value = 0)

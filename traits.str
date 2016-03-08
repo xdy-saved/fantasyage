@@ -47,7 +47,7 @@
       usedelta="yes"
       maxfinal="50">
       <!-- Bound the user value to the limits established for the trait -->
-      <bound phase="Traits" priority="1000" name="Bound trtUser">
+      <bound phase="Ability" priority="1000" name="Bound trtUser">
         <before name="Calc trtFinal"/><![CDATA[
         @minimum = field[trtMinimum].value
         @maximum = field[trtMaximum].value
@@ -85,7 +85,7 @@
       name="Final Value"
       type="derived">
       <!-- Calculate the final value from the three distinct pieces -->
-      <calculate phase="Traits" priority="3000" name="Calc trtFinal"><![CDATA[
+      <calculate phase="Ability" priority="3000" name="Calc trtFinal"><![CDATA[
         ~Note! If you change this calculation, you may need to change the similar
         ~       calculation in the "Derived" component.
         @value = field[trtUser].value + field[trtBonus].value + field[trtInPlay].value
@@ -122,6 +122,19 @@
     name="Ability"
     autocompset="no">
 
+    <field
+      id="aRaceBonus"
+      name="Racial Bonus"
+      type="derived"
+      defvalue="0">
+      </field>
+
+    <!-- <field
+      id="aFinal"
+      name="Final Ability Value"
+      type="derived">
+      </field> -->
+
     <identity group="IsAbility" />
     <identity group="PrimAbil" />
     <identity group="SecAbil" />
@@ -139,11 +152,15 @@
       ]]></eval>
 
     <!-- Each attribute point above one that is allocated by the user costs 7 CP -->
-    <eval index="2" phase="Traits" priority="10000">
+    <eval index="2" phase="Ability" priority="10000">
       <before name="Calc resLeft"/>
       <after name="Bound trtUser"/><![CDATA[
-      hero.child[resAP].field[resSpent].value += field[trtUser].value
+      hero.child[resAP].field[resSpent].value += field[trtUser].value + field[aRaceBonus].value
       ]]></eval>
+
+      <eval index="1" phase="Ability" priority="6000" name="Derived trtFinal"><![CDATA[
+        field[trtFinal].value = field[trtBonus].value + field[trtInPlay].value
+        ]]></eval>
 
     </component>
 
@@ -176,6 +193,9 @@
 
     <!-- Each skill needs its own identity tag so existing skills can be identified during advancement -->
     <identity group="Focus"/>
+    <identity group="RaceFocus" />
+    <identity group="BackFocus" />
+    <identity group="SpellTest" />
 
     <!-- Every skill is shown on the "Rolls" mouse-over on the Dashboard/TacCon -->
     <tag group="DashTacCon" tag="Rolls"/>
@@ -249,7 +269,7 @@
         calculation and BEFORE this derived calculation. We can also omit any "user"
         value from the calculation since derived traits have no user-defined facet.
         -->
-    <eval index="1" phase="Traits" priority="6000" name="Derived trtFinal"><![CDATA[
+    <eval index="1" phase="Ability" priority="6000" name="Derived trtFinal"><![CDATA[
       field[trtFinal].value = field[trtBonus].value + field[trtInPlay].value
       ]]></eval>
 
@@ -264,6 +284,75 @@
     name="Race"
     autocompset="no">
 
+    <field
+      id="rACC"
+      name="Racial Accuracy"
+      type="derived"
+      defvalue="0">
+      </field>
+
+    <field
+      id="rCOM"
+      name="Racial Communications"
+      type="derived"
+      defvalue="0">
+      </field>
+
+    <field
+      id="rCON"
+      name="Racial Constitution"
+      type="derived"
+      defvalue="0">
+      </field>
+
+    <field
+      id="rDEX"
+      name="Racial Dexterity"
+      type="derived"
+      defvalue="0">
+      </field>
+
+    <field
+      id="rFIG"
+      name="Racial Fighting"
+      type="derived"
+      defvalue="0">
+      </field>
+
+    <field
+      id="rINT"
+      name="Racial Intelligence"
+      type="derived"
+      defvalue="0">
+      </field>
+
+    <field
+      id="rPER"
+      name="Racial Perception"
+      type="derived"
+      defvalue="0">
+      </field>
+
+    <field
+      id="rSTR"
+      name="Racial Strength"
+      type="derived"
+      defvalue="0">
+      </field>
+
+    <field
+      id="rWILL"
+      name="Racial Willpower"
+      type="derived"
+      defvalue="0">
+      </field>
+
+    <field
+      id="rSpeed"
+      name="Racial Speed Modifier"
+      type="derived">
+      </field>
+
     <!-- Each race needs its own identity tag to configure the hero appropriately -->
     <identity group="Race"/>
 
@@ -272,6 +361,26 @@
       perform forward[Race.?]
       ]]></eval>
 
+    <eval index="2" phase="PreAbility" priority="5000"><![CDATA[
+        ~assign the racial ability bonuses to the ability fields
+        #raceabilbonus[aACC, field[rACC].value]
+        #raceabilbonus[aCOM, field[rCOM].value]
+        #raceabilbonus[aCON, field[rCON].value]
+        #raceabilbonus[aDEX, field[rDEX].value]
+        #raceabilbonus[aFIG, field[rFIG].value]
+        #raceabilbonus[aINT, field[rINT].value]
+        #raceabilbonus[aPER, field[rPER].value]
+        #raceabilbonus[aSTR, field[rSTR].value]
+        #raceabilbonus[aWILL, field[rWILL].value]
+
+
+        ]]></eval>
+
+    </component>
+
+  <component
+    id="Language"
+    name="Language">
     </component>
 
   <component
@@ -308,6 +417,206 @@
             ]]></eval>
         </component>
 
+    <component
+      id="Class"
+      name="Class">
+
+      <identity group="TalentFor" />
+      <identity group="Class" />
+
+      <eval index="1" phase="Setup" priority="5000"><![CDATA[
+          ~forward tags to hero
+          perform forward[Class.?]
+          perform forward[PrimAbil.?]
+          perform forward[SecAbil.?]
+
+
+          ]]></eval>
+
+      </component>
+
+    <component
+      id="AbilReq"
+      name="Abilty Requirements"
+      autocompset="no">
+
+      <field
+       id="reqACC"
+        name="Required Accuracy"
+        type="derived"
+        defvalue="0">
+        </field>
+
+      <field
+       id="reqCOM"
+        name="Required Communications"
+        type="derived"
+        defvalue="0">
+        </field>
+
+      <field
+       id="reqCON"
+        name="Required Constitution"
+        type="derived"
+        defvalue="0">
+        </field>
+
+      <field
+       id="reqDEX"
+        name="Required Dexterity"
+        type="derived"
+        defvalue="0">
+        </field>
+
+      <field
+       id="reqFIG"
+        name="Required Fighting"
+        type="derived"
+        defvalue="0">
+        </field>
+
+      <field
+       id="reqINT"
+        name="Required Intelligence"
+        type="derived"
+        defvalue="0">
+        </field>
+
+      <field
+       id="reqPER"
+        name="Required Perception"
+        type="derived"
+        defvalue="0">
+        </field>
+
+      <field
+       id="reqSTR"
+        name="Required Strength"
+        type="derived"
+        defvalue="0">
+        </field>
+
+      <field
+       id="reqWILL"
+        name="Required Willpower"
+        type="derived"
+        defvalue="0">
+        </field>
+
+    <prereq message="Accuracy requirement not met.">
+        <validate><![CDATA[
+            @message = "Accuracy " & altthing.field[reqACC].value & " or higher required."
+            ~verify whether we meet the accuracy requirement
+            validif (#abilityvalue[aACC] >= altthing.field[reqACC].value)
+            ]]></validate>
+        </prereq>
+
+    <prereq message="Communications requirement not met.">
+        <validate><![CDATA[
+            @message = "Communications " & altthing.field[reqCOM].value & " or higher required."
+            ~verify whether we meet the communications requirement
+            validif (#abilityvalue[aCOM] >= altthing.field[reqCOM].value)
+            ]]></validate>
+        </prereq>
+
+    <prereq message="Constitution requirement not met.">
+        <validate><![CDATA[
+            @message = "Constitution " & altthing.field[reqCON].value & " or higher required."
+            ~verify whether we meet the Constitution requirement
+            validif (#abilityvalue[aCON] >= altthing.field[reqCON].value)
+            ]]></validate>
+        </prereq>
+
+    <prereq message="Dexterity requirement not met.">
+        <validate><![CDATA[
+            @message = "Dexterity " & altthing.field[reqDEX].value & " or higher required."
+            ~verify whether we meet the Dexterity requirement
+            validif (#abilityvalue[aDEX] >= altthing.field[reqDEX].value)
+            ]]></validate>
+        </prereq>
+
+    <prereq message="Fighting requirement not met.">
+        <validate><![CDATA[
+            @message = "Fighting " & altthing.field[reqFIG].value & " or higher required."
+            ~verify whether we meet the Fighting requirement
+            validif (#abilityvalue[aFIG] >= altthing.field[reqFIG].value)
+            ]]></validate>
+        </prereq>
+
+    <prereq message="Intelligence requirement not met.">
+        <validate><![CDATA[
+            @message = "Intelligence " & altthing.field[reqINT].value & " or higher required."
+            ~verify whether we meet the Intelligence requirement
+            validif (#abilityvalue[aINT] >= altthing.field[reqINT].value)
+            ]]></validate>
+        </prereq>
+
+    <prereq message="Perception requirement not met.">
+        <validate><![CDATA[
+            @message = "Perception " & altthing.field[reqPER].value & " or higher required."
+            ~verify whether we meet the Perception requirement
+            validif (#abilityvalue[aPER] >= altthing.field[reqPER].value)
+            ]]></validate>
+        </prereq>
+
+    <prereq message="Strength requirement not met.">
+        <validate><![CDATA[
+            @message = "Strength " & altthing.field[reqSTR].value & " or higher required."
+            ~verify whether we meet the strength requirement
+            validif (#abilityvalue[aSTR] >= altthing.field[reqSTR].value)
+            ]]></validate>
+        </prereq>
+
+    <prereq message="Willpower requirement not met.">
+        <validate><![CDATA[
+            @message = "Willpower " & altthing.field[reqWILL].value & " or higher required."
+            ~verify whether we meet the Willpower requirement
+            validif (#abilityvalue[aWILL] >= altthing.field[reqWILL].value)
+            ]]></validate>
+        </prereq>
+   </component>
+
+   <component
+     id="ClassPower"
+     name="Class Power">
+
+     </component>
+
+   <component
+     id="AbilityAdv"
+     name="Ability Advancement">
+
+     </component>
+
+   <component
+     id="ClassSpec"
+     name="Class Specialization"
+     autocompset="no">
+
+     <identity group="TalentFor" />
+
+     </component>
+
+  <component
+    id="Spell"
+    name="Spell">
+
+    </component>
+
+  <component
+    id="WepGroup"
+    name="Weapon Group">
+    <identity group="WepGroup" />
+
+    <eval index="1" phase="Setup" priority="5000"><![CDATA[
+        ~forward group tags to hero
+        perform forward[WepGroup.?]
+
+
+        ]]></eval>
+
+    </component>
+
 
   <!-- Define various component sets associated with the components defined above.
   -->
@@ -328,9 +637,9 @@
     id="Focus"
     forceunique="yes">
     <compref component="Focus"/>
-    <compref component="Trait"/>
     <compref component="Domain"/>
     <compref component="CanAdvance"/>
+    <compref component="Trait" />
     </compset>
 
   <!-- Ability - all abilities derive from this compset -->
@@ -360,6 +669,13 @@
       id="Talent">
       <compref component="Talent" />
       <compref component="Activation"/>
+      <compref component="AbilReq" />
+  </compset>
+
+  <compset
+      id="ClassSpec">
+      <compref component="ClassSpec" />
+      <compref component="AbilReq" />
   </compset>
 
 

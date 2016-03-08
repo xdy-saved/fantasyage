@@ -24,7 +24,7 @@
     -->
 
     <!-- Define any script needed to apply changes to traits or other mechanisms
-    <eval value="1" phase="PreTraits" priority="5000">
+    <eval value="1" phase="PreAbility" priority="5000">
       <before name="Calc trtFinal"/><![CDATA[
       ~apply whatever adjustment(s) are needed here
       ~hero.child[resAbility].field[resMax].value += 1
