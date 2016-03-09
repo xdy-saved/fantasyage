@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="lDwarven" name="Dwarven" compset="Language" uniqueness="unique"></thing>
+  <thing id="lCommon" name="Common Tongue" compset="Language" uniqueness="unique"></thing>
+  <thing id="lElven" name="Elven" compset="Language" uniqueness="unique"></thing>
+  <thing id="lGnome" name="Gnomish" compset="Language" uniqueness="unique"></thing>
+  <thing id="lHalfling" name="Halfling" compset="Language" uniqueness="unique"></thing>
+  <thing id="lOrcish" name="Orcish" compset="Language" uniqueness="unique"></thing>
+  </document>

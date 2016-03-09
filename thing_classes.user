@@ -10,9 +10,5 @@
     <tag group="SecAbil" tag="aPER"/>
     <tag group="SecAbil" tag="aWILL"/>
     <tag group="SecAbil" tag="aCOM"/>
-    <bootstrap thing="wgLasers">
-      <containerreq phase="Initialize" priority="500">source.Titansgrav</containerreq>
-      </bootstrap>
-    <bootstrap thing="wgSword"></bootstrap>
     </thing>
   </document>

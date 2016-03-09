@@ -41,6 +41,7 @@
     <value id="NoPersText"/>  <!-- User entered no background text -->
     <value id="CanRead" />    <!-- Identifies if a hero can read a language -->
     <value id="CanWrite" />   <!-- Identifies if a hero can write in a specific language -->
+    <value id="SecondRace" />
     </group>
 
   <!-- User group - general helper tags that can be assigned by users via the Editor
@@ -72,6 +73,7 @@
     <value id="NoDamage"/>    <!-- Indicates no damage history exists for the hero -->
     <value id="Hand"/>        <!-- Each tag indicates one hand worth of weapons equipped -->
     <value id="RerollInit"/>  <!-- Indicates that the hero can re-roll initiative values -->
+    <value id="HalfBreed" />
     </group>
 
   <!-- DashTacCon group - behaviors associated with the Dashboard and/or Tactical Console

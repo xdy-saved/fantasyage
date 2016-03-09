@@ -34,6 +34,29 @@
       </inputthing>
     </editthing>
 
+    <editthing
+        name="Social Class"
+        compset="Social"
+        prefix="soc"
+        description="Social clases available to characters."
+        summary="Social classes available to characters.">
+    </editthing>
+
+    <editthing
+        name="Background"
+        compset="Background"
+        prefix="bg"
+        description="Backgrounds available for character creation."
+        summary="Backgrounds available for character creation.">
+
+        <inputthing
+            name="Social Class"
+            helptext="Which social class does this background belong in?">
+            <it_tagpick group="BackType" tag="?" />
+        </inputthing>
+
+    </editthing>
+
 
   <!-- Skill editthing -->
   <editthing
@@ -148,15 +171,135 @@
       description="Weapon groups."
       summary="Weapon groups.">
 
+      <inputthing
+          name="Associated Ability Score"
+          helptext="Select the associated ability score for the weapon group.">
+          <it_tagpick group="WepAbility" tag="?" />
+      </inputthing>
+
+      <inputthing
+          name="Damage Override"
+          helptext="If this weapon group uses an ability other than Strength for damage, select it here.">
+          <it_tagpick group="DmgOver" tag="?" />
+      </inputthing>
+
   </editthing>
 
   <!-- Race editthing -->
   <editthing
     compset="Race"
     name="Race"
-    prefix="rac"
+    prefix="r"
     description="Races have no special fields - only a name. If a race confers an ability,{br}create it as a special ability and bootstrap it from the race."
     summary="Defines a Race that can be selected by a character.">
+
+    <inputthing
+        name="Accuracy"
+        helptext="Set the accuracy given to the hero from their race.">
+        <it_field field="rACC" />
+    </inputthing>
+
+    <inputthing
+        name="Communication"
+        helptext="Set the communication given to the hero from their race.">
+        <it_field field="rCOM" />
+    </inputthing>
+
+    <inputthing
+        name="Constitution"
+        helptext="Set the constitution given to the hero from their race.">
+        <it_field field="rCON" />
+    </inputthing>
+
+    <inputthing
+        name="Dexterity"
+        helptext="Set the dexterity given to the hero from their race.">
+        <it_field field="rDEX" />
+    </inputthing>
+
+    <inputthing
+        name="Fighting"
+        helptext="Set the fighting given to the hero from their race.">
+        <it_field field="rFIG" />
+    </inputthing>
+
+    <inputthing
+        name="Intelligence"
+        helptext="Set the intelligence given to the hero from their race.">
+        <it_field field="rINT" />
+    </inputthing>
+
+    <inputthing
+        name="Perception"
+        helptext="Set the perception given to the hero from their race.">
+        <it_field field="rPER" />
+    </inputthing>
+
+    <inputthing
+        name="Strength"
+        helptext="Set the strength given to the hero from their race.">
+        <it_field field="rSTR" />
+    </inputthing>
+
+    <inputthing
+        name="Willpower"
+        helptext="Set the willpower given to the hero from their race.">
+        <it_field field="rWILL" />
+    </inputthing>
+
+    <inputthing
+        name="Base Speed"
+        helptext="Set the base speed of the race.">
+        <it_field field="rSpeed" />
+    </inputthing>
+
+    <inputthing
+        name="Language"
+        helptext="Select the languages known by the race.">
+        <it_bootcustom compset="Language">
+            <inputthing
+                name="Can Write?">
+                <it_tagcheck group="Helper" tag="CanWrite" default="yes" />
+            </inputthing>
+            <inputthing
+                name="Can Read?">
+                <it_tagcheck group="Helper" tag="CanRead" default="yes" />
+            </inputthing>
+        </it_bootcustom>
+    </inputthing>
+
+    <inputthing
+        name="Racial Focus"
+        helptext="These are the focuses selected by the race, but not from the background benefits.">
+        <it_taglist group="RaceFocus" tag="?" />
+    </inputthing>
+
+    <inputthing
+        name="Racial Benefit Ability"
+        helptext="These are the ability scores that can be picked as a racial benefit.">
+        <it_taglist group="RaceGain" tag="?" />
+    </inputthing>
+
+    <inputthing
+        name="Racial Benefit Focus"
+        helptext="These are the focuses that can be chosen as racial benefit.">
+        <it_taglist group="RaceFocBen" tag="?" />
+    </inputthing>
+
+    <inputthing
+        name="Racial Benefit Wep Group"
+        helptext="These are the weapon groups that can be selected as racial benefits.">
+        <it_taglist group="WepGroRac" tag="?" />
+    </inputthing>
+
+    </editthing>
+
+    <editthing
+        compset="Language"
+        name="Languages"
+        prefix="l"
+        description="Languages that can be known and learned."
+        summary="Languages that can be known and leanred.">
     </editthing>
 
 

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="bgApprenti" name="Apprentice" description="You&apos;ve been trained by a spellcaster and were on your way to becoming a powerful mage. Your apprenticeship wasn&apos;t easy, but you came out the other side with valuable knowledge and experiences that set you apart from those not able or willing to delve into the mystic arts." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socUpper"/>
+    </thing>
+  <thing id="bgArtist" name="Artist" description="Beauty drives you. It&apos;s really all that matters. Whether beauty takes the shape of a painting, a sonnet, a sculpture, or something else entirely doesn&apos;t matter. The fact that it&apos;s beautiful and, most importantly, you made it, does. You&apos;ve either apprenticed with another artist, perhaps in a studio with other would-be artists, or you have exceptional natural talent. Regardless, you likely specialize in a particular form of art. Now you just need to figure out how to make a living at it." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socLower"/>
+    </thing>
+  <thing id="bgCriminal" name="Criminal" description="You make your living on the streets. More accurately, you make your living off other people walking the streets. You were an urchin, orphan, or outcast with no place in the world until others taught you how to survive  the hard way. Now, you know your way around the city. You know how to spot a mark. You know how to spot a house worth robbing. You also know, if you&apos;re caught, you&apos;re dead." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socOutside"/>
+    </thing>
+  <thing id="bgDilettan" name="Dilettante" description="Being wealthy has afforded you opportunities to indulge in the best of life. You study what interests you, you wear whatever&apos;s in fashion, you drink fine wines and eat refined foods, you have the most interesting friends, and you&apos;re always on the lookout for the next bit of gossip. Life is fine, indeed. You may revel in your role as a member of the upper crust, or you may be the black sheep of your family. Ultimately what matters is that you&apos;re never bored." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socUpper"/>
+    </thing>
+  <thing id="bgSquire" name="Squire" description="There are many knights in the world and all of them need help taking care of their mounts, cleaning their armor, sharpening weapons, and doing whatever else the knight asks. That is the role of the squire. In exchange for all that work, you get to learn what it takes to become a knight yourself. That day may be far off or very near." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socUpper"/>
+    </thing>
+  <thing id="bgHermit" name="Hermit" description="You left civilization for some reason to become a hermit. Perhaps you took a holy vow, perhaps you needed time alone to ponder an important question or remove yourself from a difficult situation, or perhaps you just don&apos;t care for people and are happy to be on your own. Time on your own has hardened you and made you self-reliant." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socOutside"/>
+    </thing>
+  <thing id="bgPirate" name="Pirate" description="You may not have been born on the water, but you call it home now. Any city you visit is merely a brief stop before heading back out to sea to find more ships to prey on. Perhaps you&apos;re actually a lawless pirate with no loyalties but to your ship and captain, or perhaps you&apos;re a privateer who only attacks and captures vessels of an enemy state. You may have been forcibly brought into your life as a pirate or signed up on your own in order to get away from a past you have no interest in reconnecting with." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socOutside"/>
+    </thing>
+  <thing id="bgWander" name="Wanderer" description="The open road has always called to you and you have answered. Instead of calling a single location home, you regard the entire world as yours. You love to wander, find new places, and meet new people. You rarely get lost, but even when you do, it usually turns out to be an adventure worth experiencing." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socOutside"/>
+    </thing>
+  <thing id="bgRadical" name="Radical" description="You are a troublemaker and rabble rouser. You have dedicated yourself to opposing a ruler, politician, political party, government, religion, or religious institution, and you do everything in your power to spread the word about them and their corruption. Your goal is to remove that person from power or overthrow the current system." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socOutside"/>
+    </thing>
+  <thing id="bgExile" name="Exile" description="You are a true outcast. Wherever you&apos;re from, you or your family did something that resulted in you being exiled. Perhaps you were on the wrong side of a war, had the wrong friends at the wrong time, made some business dealings that didn&apos;t end well, or simply broke some very taboo laws. Whatever it was, you&apos;ve lived on the road for a while, perhaps years, and know how to make your way in the world." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socOutside"/>
+    </thing>
+  <thing id="bgPerform" name="Performer" description="You are a dancer, actor, musician, singer, or some other sort of performer. You enjoy getting in front of a room of people and affecting them in some way with your performance. You especially like it when they show their appreciation in other ways, such as with money or affection." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socLower"/>
+    </thing>
+  <thing id="bgSailor" name="Sailor" description="You know your way around a ship better than most. You&apos;ve trained and lived at sea for long stretches of time, either in a navy or on a trading ship - maybe both at different times. You may call some port home, but most of your time is spent at sea, so you&apos;ve traveled to many different parts of the world and seen things few can dream of." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socLower"/>
+    </thing>
+  <thing id="bgSoldier" name="Soldier" description="You are a soldier, possibly even a guard or mercenary, who has signed up to fight for your country. You&apos;ve trained for combat, but also had an education in how to live and work as part of a unit as well as how to take and execute an order. A soldier who doesn&apos;t follow orders is useless. Perhaps your time as a soldier is over and you&apos;re on your own again, or maybe you deserted for some reason." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socLower"/>
+    </thing>
+  <thing id="bgTradespe" name="Tradesperson" description="Resting somewhere between the laborer and guilder, the tradesperson specializes in some kind of skilled manual labor, such as masonry, carpentry, clockmaking, blacksmithing, or any of dozens of other trades. You&apos;ve been trained in a trade and know how to talk about its practical and theoretical applications, which allows you to accurately plan and execute jobs." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socLower"/>
+    </thing>
+  <thing id="bgLaborer" name="Laborer" description="You carry, lift, tote, throw, handle, move, or otherwise deal with loads of material that have to be moved off of or onto ships or wagons, or into buildings. The work isn&apos;t difficult, but it is {i}hard{/i} and you have the stamina and strength to show for it." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socLower"/>
+    </thing>
+  <thing id="bgMerchant" name="Merchant" description="You have a way with people and you use that in your business dealings to become successful. You use your charisma to get the best deals or to convince others they&apos;re getting the best deal, but all in service to your success. You may have a small merchant stand selling odds and ends in a bazaar or operate a thriving shop that specializes in carpets, foreign imports, or other valuables. Instead of a store, perhaps you travel from one place to another, buying unusual items in one place and transporting them to sell in another. Regardless of the type of merchant you are, you know how to come out ahead in any deal." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socMiddle"/>
+    </thing>
+  <thing id="bgInitiate" name="Inititate" description="You are a believer and worshiper who has joined an organized religion. You may work as an acolyte or priest of a church, be a member of a circle of druids, or even a member of a cult. You have learned from holy books and other followers about your chosen religion or the natural world around you." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socMiddle"/>
+    </thing>
+  <thing id="bgGuilder" name="Guilder" description="You work for one of the powerful mercantile or craft guilds that control trade in the larger cities. You may know a trade, or you may just know how to manipulate money and people to get what you want. Your talents and connections ensure you and your family do quite well, which is how you hope to keep it." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socMiddle"/>
+    </thing>
+  <thing id="bgInnkeep" name="Innkeeper" description="You run or work at an inn. You know what&apos;s needed to keep an inn running and the customers happy, or at least happy enough to pay you for services rendered. Your inn&apos;s longterm survival often relies on your ability to spot trouble before it happens. Sometimes by turning away people you have a bad feeling about, and sometimes by making friends you can rely on for support." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socMiddle"/>
+    </thing>
+  <thing id="bgStudent" name="Student" description="Rather than spend your life making goods, fixing them, or selling them, you are one of the few wealthy, connected, or smart enough to attend a university. As a student, you spend most of your time in classes or studying - at least that ought to be the case, but it&apos;s also entirely likely that you spent your time in other pursuits you find more interesting or enjoyable." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socMiddle"/>
+    </thing>
+  <thing id="bgScribe" name="Scribe" description="Books, scrolls, and portfolios are what you fill your time with. The greatest libraries, universities, and scholars of your time require your services to do what they do and they pay well for your services. Knowledge that no one ever sees isn&apos;t knowledge - it&apos;s a secret. When you get your hands on secrets, you commit them to books, then preserve and spread that knowledge across the world and through time. You may revel in the importance of your profession or despise it as an isolating, backbreaking task." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socMiddle"/>
+    </thing>
+  <thing id="bgOfficial" name="Official" description="Your game is politics and you have risen to significant heights despite your non-noble birth. Perhaps it&apos;s your way with the masses or your ability to convince others of the wisdom of your ideas, but people tend to follow your lead." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socUpper"/>
+    </thing>
+  <thing id="bgScholar" name="Scholar" description="When lords, generals, and politicians have questions, they come to you. You&apos;ve studied extensively and if you don&apos;t know an answer to a question, you can likely find someone else or a book that does. Others may change the course of history, but you&apos;re the one who tells them how to do it." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socUpper"/>
+    </thing>
+  <thing id="bgNoble" name="Noble" description="You were born a noble and raised to believe not only that you&apos;re naturally superior to everyone of a lower station, but that it was your role to take care of them as you would children who have no idea how to get by in the world. Some may call you snooty, but doing so only reveals their ignorance. You&apos;ve always enjoyed the best in life and that is as it should be. If your family hasn&apos;t managed to hold onto its position, you may be trying to regain it, but no matter what, you&apos;re still a noble." compset="Background" uniqueness="unique">
+    <tag group="BackType" tag="socUpper"/>
+    </thing>
+  </document>

@@ -125,8 +125,7 @@
     <field
       id="aRaceBonus"
       name="Racial Bonus"
-      type="derived"
-      defvalue="0">
+      type="derived">
       </field>
 
     <!-- <field
@@ -139,6 +138,9 @@
     <identity group="PrimAbil" />
     <identity group="SecAbil" />
     <identity group="FocusAbil" />
+    <identity group="DmgOver" />
+    <identity group="WepAbility" />
+    <identity group="RaceAbilBe" />
 
     <!-- Attributes have a minimum trait value of 1 -->
     <eval index="1" phase="Initialize" priority="3000"><![CDATA[
@@ -196,6 +198,7 @@
     <identity group="RaceFocus" />
     <identity group="BackFocus" />
     <identity group="SpellTest" />
+    <identity group="RaceFocBen" />
 
     <!-- Every skill is shown on the "Rolls" mouse-over on the Dashboard/TacCon -->
     <tag group="DashTacCon" tag="Rolls"/>
@@ -363,6 +366,8 @@
 
     <eval index="2" phase="PreAbility" priority="5000"><![CDATA[
         ~assign the racial ability bonuses to the ability fields
+
+        doneif (tagis[Helper.SecondRace] <> 0)
         #raceabilbonus[aACC, field[rACC].value]
         #raceabilbonus[aCOM, field[rCOM].value]
         #raceabilbonus[aCON, field[rCON].value]
@@ -380,12 +385,14 @@
 
   <component
     id="Language"
-    name="Language">
+    name="Language"
+    autocompset="no">
     </component>
 
   <component
       id="Background"
-      name="Background">
+      name="Background"
+      autocompset="no">
 
       <identity group="Background" />
 
@@ -396,9 +403,11 @@
 
     <component
         id="Social"
-        name="Social Class">
+        name="Social Class"
+        autocompset="no">
 
         <identity group="Social" />
+        <identity group="BackType" />
 
         <eval index="1" phase="Setup" priority="5000"><![CDATA[
           perform forward[Social.?]
@@ -443,64 +452,55 @@
       <field
        id="reqACC"
         name="Required Accuracy"
-        type="derived"
-        defvalue="0">
+        type="derived">
         </field>
 
       <field
        id="reqCOM"
         name="Required Communications"
-        type="derived"
-        defvalue="0">
+        type="derived">
         </field>
 
       <field
        id="reqCON"
         name="Required Constitution"
-        type="derived"
-        defvalue="0">
+        type="derived">
         </field>
 
       <field
        id="reqDEX"
         name="Required Dexterity"
-        type="derived"
-        defvalue="0">
+        type="derived">
         </field>
 
       <field
        id="reqFIG"
         name="Required Fighting"
-        type="derived"
-        defvalue="0">
+        type="derived">
         </field>
 
       <field
        id="reqINT"
         name="Required Intelligence"
-        type="derived"
-        defvalue="0">
+        type="derived">
         </field>
 
       <field
        id="reqPER"
         name="Required Perception"
-        type="derived"
-        defvalue="0">
+        type="derived">
         </field>
 
       <field
        id="reqSTR"
         name="Required Strength"
-        type="derived"
-        defvalue="0">
+        type="derived">
         </field>
 
       <field
        id="reqWILL"
         name="Required Willpower"
-        type="derived"
-        defvalue="0">
+        type="derived">
         </field>
 
     <prereq message="Accuracy requirement not met.">
@@ -605,8 +605,10 @@
 
   <component
     id="WepGroup"
-    name="Weapon Group">
+    name="Weapon Group"
+    autocompset="no">
     <identity group="WepGroup" />
+    <identity group="WepGroRac" />
 
     <eval index="1" phase="Setup" priority="5000"><![CDATA[
         ~forward group tags to hero
@@ -616,6 +618,31 @@
         ]]></eval>
 
     </component>
+
+    <!--  The Raciel Benefit component will mostly be used for selectable racial
+          ability score bonuses, racial focuses and weapon groups should be able
+          to be added directly -->
+    <component
+      id="RacialBen"
+      name="Racial Benefit">
+
+      <identity group="RaceBen" />
+      <identity group="RaceGain" />
+
+      <eval index="1" phase="PreAbility" priority="5000"><![CDATA[
+          ~Give a bonus to associated ability score
+          hero.findchild[Ability, tagids[RaceAbilBe.?,"|"]].field[aRaceBonus].value += 1
+
+
+          ]]></eval>
+
+      </component>
+
+    <component
+      id="RaceSpec"
+      name="Racial Special">
+
+      </component>
 
 
   <!-- Define various component sets associated with the components defined above.
@@ -678,5 +705,28 @@
       <compref component="AbilReq" />
   </compset>
 
+  <compset
+      id="WepGroup"
+      forceunique="yes">
+      <compref component="WepGroup" />
+  </compset>
+
+  <compset
+      id="Language"
+      forceunique="yes">
+      <compref component="Language" />
+  </compset>
+
+  <compset
+      id="Social"
+      forceunique="yes">
+      <compref component="Social" />
+  </compset>
+
+  <compset
+      id="Background"
+      forceunique="yes">
+      <compref component="Background" />
+  </compset>
 
   </document>

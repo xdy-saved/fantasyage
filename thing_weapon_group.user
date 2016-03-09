@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
-  <thing id="wgSword" name="Swords" compset="WepGroup" uniqueness="unique"></thing>
+  <thing id="wgHvyBlade" name="Heavy Blades" compset="WepGroup" uniqueness="unique">
+    <tag group="WepAbility" tag="aFIG"/>
+    </thing>
   <thing id="wgLasers" name="Lasers" compset="WepGroup" uniqueness="unique">
     <usesource source="Titansgrav" parent="UserParent" name="Titansgrave"/>
+    </thing>
+  <thing id="wgAxes" name="Axes" compset="WepGroup" uniqueness="unique">
+    <tag group="WepAbility" tag="aFIG"/>
+    </thing>
+  <thing id="wgBlkPow" name="Black Powder" compset="WepGroup" uniqueness="unique">
+    <tag group="DmgOver" tag="aACC"/>
+    <tag group="WepAbility" tag="aACC"/>
+    </thing>
+  <thing id="wgBludgeon" name="Bludgeons" compset="WepGroup" uniqueness="unique">
+    <tag group="WepAbility" tag="aFIG"/>
+    </thing>
+  <thing id="wgBows" name="Bows" compset="WepGroup" uniqueness="unique">
+    <tag group="WepAbility" tag="aACC"/>
+    <tag group="DmgOver" tag="aACC"/>
+    </thing>
+  <thing id="wgBrawling" name="Brawling" compset="WepGroup" uniqueness="unique">
+    <tag group="WepAbility" tag="aACC"/>
+    </thing>
+  <thing id="wgDueling" name="Dueling" compset="WepGroup" uniqueness="unique">
+    <tag group="WepAbility" tag="aACC"/>
+    </thing>
+  <thing id="wgLances" name="Lances" compset="WepGroup" uniqueness="unique">
+    <tag group="WepAbility" tag="aACC"/>
+    </thing>
+  <thing id="wgLgtBlade" name="Light Blades" compset="WepGroup" uniqueness="unique">
+    <tag group="WepAbility" tag="aACC"/>
+    </thing>
+  <thing id="wgPolearm" name="Polearms" compset="WepGroup" uniqueness="unique">
+    <tag group="WepAbility" tag="aFIG"/>
+    </thing>
+  <thing id="wgSpear" name="Spears" compset="WepGroup" uniqueness="unique">
+    <tag group="WepAbility" tag="aFIG"/>
+    </thing>
+  <thing id="wgStaves" name="Staves" compset="WepGroup" uniqueness="unique">
+    <tag group="WepAbility" tag="aACC"/>
     </thing>
   </document>

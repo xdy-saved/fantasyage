@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="socOutside" name="Outsider" compset="Social" uniqueness="unique"></thing>
+  <thing id="socLower" name="Lower Class" compset="Social" uniqueness="unique"></thing>
+  <thing id="socMiddle" name="Middle Class" compset="Social" uniqueness="unique"></thing>
+  <thing id="socUpper" name="Upper Class" compset="Social" uniqueness="unique"></thing>
+  </document>

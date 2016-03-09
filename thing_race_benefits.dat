@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the assortment of attributes possessed by every actor for the
+      game system. The display order of attributes is controlled via the assignment of
+      an "RaceAbilBe" tag with the relative position of each.
+-->
+
+<document signature="Hero Lab Data">
+
+  <!-- Sample Attribute
+  -->
+  <thing
+    id="rbACC"
+    name="+1 Accuracy"
+    compset="RacialBen"
+    isunique="yes"
+    description="Description goes here">
+
+    <tag group="RaceAbilBe" tag="aACC"/>
+    </thing>
+
+    <thing
+      id="rbCOM"
+      name="+1 Communication"
+      compset="RacialBen"
+      isunique="yes"
+      description="Description goes here">
+
+      <tag group="RaceAbilBe" tag="aCOM"/>
+      </thing>
+
+    <thing
+      id="rbCON"
+      name="+1 Constitution"
+      compset="RacialBen"
+      isunique="yes"
+      description="Description goes here">
+
+        <tag group="RaceAbilBe" tag="aCON"/>
+        </thing>
+
+    <thing
+      id="rbDEX"
+      name="+1 Dexterity"
+      compset="RacialBen"
+      isunique="yes"
+      description="Description goes here">
+
+      <tag group="RaceAbilBe" tag="aDEX"/>
+    </thing>
+
+    <thing
+      id="rbFIG"
+      name="+1 Fighting"
+      compset="RacialBen"
+      isunique="yes"
+      description="Description goes here">
+
+      <tag group="RaceAbilBe" tag="aFIG"/>
+    </thing>
+
+    <thing
+      id="rbINT"
+      name="+1 Intelligence"
+      compset="RacialBen"
+      isunique="yes"
+      description="Description goes here">
+
+      <tag group="RaceAbilBe" tag="aINT"/>
+    </thing>
+
+    <thing
+      id="rbPER"
+      name="+1 Perception"
+      compset="RacialBen"
+      isunique="yes"
+      description="Description goes here">
+
+      <tag group="RaceAbilBe" tag="aPER"/>
+    </thing>
+
+
+   <thing
+    id="rbSTR"
+    name="+1 Strength"
+    compset="RacialBen"
+    isunique="yes"
+    description="Description goes here">
+
+    <tag group="RaceAbilBe" tag="aSTR"/>
+    </thing>
+
+    <thing
+      id="rbWILL"
+      name="+1 Willpower"
+      compset="RacialBen"
+      isunique="yes"
+      description="Description goes here">
+
+      <tag group="RaceAbilBe" tag="aWILL"/>
+    </thing>
+
+  </document>
