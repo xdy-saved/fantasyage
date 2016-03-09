@@ -61,11 +61,11 @@
   <!-- Skill editthing -->
   <editthing
     compset="Focus"
-    name="Skill"
-    prefix="sk"
-    description="As basic traits, Skills have a minimum and maximum value, as well as{br}an optional short name and/or abbreviation."
-    summary="Defines a Skill upon which starting CPs can be spent by a character.">
-    <inputthing
+    name="Focus"
+    prefix="f"
+    description="Focuses have a minimum and maximum value, as well as{br}an optional short name and/or abbreviation."
+    summary="Defines a Focus which can be purchased throughotu the game">
+    <!-- <inputthing
       name="Minimum Value"
       helptext="Specify the minimum rating for the skill (default is 0).">
       <it_field field="trtMinimum"/>
@@ -74,14 +74,14 @@
       name="Maximum Value"
       helptext="Specify the maximum rating for the skill(default is 10).">
       <it_field field="trtMaximum"/>
-      </inputthing>
-    <inputthing
+      </inputthing> -->
+    <!-- <inputthing
       name="Abbreviation"
       helptext="Specify a very short abbreviation for use in displaying the skill via its abbreviation (max 5 characters).">
       <it_field field="trtAbbrev"/>
-      </inputthing>
+      </inputthing> -->
     <inputthing
-      name="Linked Attribute for Skill"
+      name="Linked Ability for Skill"
       helptext="Select the attribute used to calculate the dice pool for this skill.">
       <it_linkage compset="Ability" linkage="ability"/>
       </inputthing>

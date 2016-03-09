@@ -661,11 +661,10 @@
 
   <!-- Skill - all skills derive from this compset -->
   <compset
-    id="Focus"
-    forceunique="yes">
+    id="Focus">
     <compref component="Focus"/>
     <compref component="Domain"/>
-    <compref component="CanAdvance"/>
+    <!-- <compref component="CanAdvance"/> -->
     <compref component="Trait" />
     </compset>
 

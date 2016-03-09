@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="DELTEME" name="Constitution ()" compset="Focus" maxlimit="2">
+    <tag group="explicit" tag="3"/>
+    <link linkage="ability" thing="aCON"/>
+    </thing>
+  <thing id="fBlkPowder" name="Accuracy (Black Powder)" description="Proficiency with weapons from the Black Powder Weapon Group. Black powder weapons are not in every campaign setting, so ask your GM before taking them." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Black Powder"/>
+    <tag group="explicit" tag="1"/>
+    <link linkage="ability" thing="aACC"/>
+    </thing>
+  <thing id="fStaves" name="Accuracy (Staves)" description="Proficiency with weapons from the Staves Weapon Group." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Staves"/>
+    <tag group="explicit" tag="1"/>
+    <link linkage="ability" thing="aACC"/>
+    </thing>
+  <thing id="fArcBlast" name="Accuracy (Arcane Blast)" description="Using the mage&apos;s class power of the same name." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Arcane Blast"/>
+    <tag group="explicit" tag="1"/>
+    <link linkage="ability" thing="aACC"/>
+    </thing>
+  <thing id="fLgtBlades" name="Accuracy (Light Blades)" description="Proficiency with weapons from the Light Blades Weapon Group." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Light Blades"/>
+    <tag group="explicit" tag="1"/>
+    <link linkage="ability" thing="aACC"/>
+    </thing>
+  <thing id="fBrawling" name="Accuracy (Brawling)" description="Proficiency with weapons from the Brawling Weapon Group." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Brawling"/>
+    <tag group="explicit" tag="1"/>
+    <link linkage="ability" thing="aACC"/>
+    </thing>
+  <thing id="fBows" name="Accuracy (Bows)" description="Proficiency with weapons from the Bows Weapon Group." compset="Focus" maxlimit="2">
+    <tag group="explicit" tag="1"/>
+    <link linkage="ability" thing="aACC"/>
+    </thing>
+  <thing id="fDueling" name="Accuracy (Dueling)" description="Proficiency with weapons from the Dueling Weapon Group." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Dueling"/>
+    <tag group="explicit" tag="1"/>
+    <link linkage="ability" thing="aACC"/>
+    </thing>
+  <thing id="fGrenades" name="Accuracy (Grenades)" description="Making ranged attacks with grenades." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Grenades"/>
+    <tag group="explicit" tag="1"/>
+    <link linkage="ability" thing="aACC"/>
+    </thing>
+  <thing id="fAccuracy" name="Accuracy" compset="Focus" uniqueness="unique" isshowonly="yes">
+    <tag group="explicit" tag="1"/>
+    <link linkage="ability" thing="aACC"/>
+    </thing>
+  <thing id="fCommunica" name="Communication" compset="Focus" maxlimit="2" uniqueness="unique" isshowonly="yes">
+    <tag group="explicit" tag="2"/>
+    <link linkage="ability" thing="aCOM"/>
+    </thing>
+  <thing id="fLeadershi" name="Communication (Leadership)" description="Guiding, directing, and inspiring others." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Leadership"/>
+    <tag group="explicit" tag="2"/>
+    <link linkage="ability" thing="aCOM"/>
+    </thing>
+  <thing id="fInvestiga" name="Communication (Investigation)" description="Interviewing people for information and finding and deciphering clues." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Investigation"/>
+    <tag group="explicit" tag="2"/>
+    <link linkage="ability" thing="aCOM"/>
+    </thing>
+  <thing id="fEtiquette" name="Communication (Etiquette)" description="Knowing the social niceties of various cultures." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Etiquette"/>
+    <tag group="explicit" tag="2"/>
+    <link linkage="ability" thing="aCOM"/>
+    </thing>
+  <thing id="fDeception" name="Communication (Deception)" description="Lying to and tricking those less mentally adept than you." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Deception"/>
+    <tag group="explicit" tag="2"/>
+    <link linkage="ability" thing="aCOM"/>
+    </thing>
+  <thing id="fBargain" name="Communication (Bargaining)" description="Negotiating with others and making deals" compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Bargaining"/>
+    <tag group="explicit" tag="2"/>
+    <link linkage="ability" thing="aCOM"/>
+    </thing>
+  <thing id="fGambling" name="Communication (Gambling)" description="Playing games of chance and profiting from them." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Gambling"/>
+    <tag group="explicit" tag="2"/>
+    <link linkage="ability" thing="aCOM"/>
+    </thing>
+  <thing id="fDisguise" name="Communication (Disguise)" description="Making yourself look like someone else or a different class of person." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Disguise"/>
+    <tag group="explicit" tag="2"/>
+    <link linkage="ability" thing="aCOM"/>
+    </thing>
+  <thing id="fAniHandle" name="Communication (Animal Handling)" description="Interacting with and caring for animals." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Animal Handling"/>
+    <tag group="explicit" tag="2"/>
+    <link linkage="ability" thing="aCOM"/>
+    </thing>
+  <thing id="fPersuasio" name="Communication (Persuasion)" description="Convincing others to agree with you." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Persuasion"/>
+    <tag group="explicit" tag="2"/>
+    <link linkage="ability" thing="aCOM"/>
+    </thing>
+  <thing id="fPerform" name="Communication (Performance)" description="Entertaining an audience with an artistic talent." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Performance"/>
+    <tag group="explicit" tag="2"/>
+    <link linkage="ability" thing="aCOM"/>
+    </thing>
+  <thing id="fSeduction" name="Communication (Seduction)" description="Making winning moves in the game of love." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Seduction"/>
+    <tag group="explicit" tag="2"/>
+    <link linkage="ability" thing="aCOM"/>
+    </thing>
+  <thing id="fConstitut" name="Constitution" compset="Focus" maxlimit="2" uniqueness="unique" isshowonly="yes">
+    <tag group="explicit" tag="3"/>
+    <link linkage="ability" thing="aCON"/>
+    </thing>
+  <thing id="fRowing" name="Constitution (Rowing)" description="Propelling a vessel with oars." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Rowing"/>
+    <tag group="explicit" tag="3"/>
+    <link linkage="ability" thing="aCON"/>
+    </thing>
+  <thing id="fRunning" name="Constitution (Running)" description="Moving quickly in both short sprints and long distance hauls." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Running"/>
+    <tag group="explicit" tag="3"/>
+    <link linkage="ability" thing="aCON"/>
+    </thing>
+  <thing id="fDrinking" name="Constitution (Drinking)" description="Consuming large quantities of alcohol and avoiding the aftereffects." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Drinking"/>
+    <tag group="explicit" tag="3"/>
+    <link linkage="ability" thing="aCON"/>
+    </thing>
+  <thing id="fStamina" name="Constitution (Stamina)" description="Enduring fatigue, disease, and privation." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Stamina"/>
+    <tag group="explicit" tag="3"/>
+    <link linkage="ability" thing="aCON"/>
+    </thing>
+  <thing id="fSwimming" name="Constitution (Swimming)" description="Moving through the water and staying afloat." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Swimming"/>
+    <tag group="explicit" tag="3"/>
+    <link linkage="ability" thing="aCON"/>
+    </thing>
+  </document>
