@@ -48,56 +48,76 @@
   -->
   <portal
     id="cClass"
-    style="tblNormal">
-    <table_dynamic
+    style="chsNormal"
+    width="110">
+    <chooser_table
       component="Class"
-      showtemplate="cPick"
-      choosetemplate="SimpleItem"
-      showfixedlast="yes"
-      addpick="resAbility">
-      <candidate>!Hide.Class</candidate>
+      choosetemplate="LargeItem">
+      <chosen><![CDATA[
+        if (@ispick = 0) then
+          @text = "{align center}{text clrwarning}Select Class"
+        else
+          @text = "{align center}" & field[name].text
+          endif
+        ]]></chosen>
       <titlebar><![CDATA[
-        @text = "Add a Class"
+        @text = "Choose the class for your character"
         ]]></titlebar>
-      <description><![CDATA[
-          var details as string
-          foreach bootstrap in this
-            details = splice(details, eachthing.field[name].text, ",")
-            nexteach
-          @text=details
-          ]]></description>
-      <headertitle><![CDATA[
-        @text = "Class: "
-        ]]></headertitle>
-      <additem><![CDATA[
-        ~if we're in advancement mode, we've been frozen, so display accordingly
-        if (state.iscreate = 0) then
-          @text = "You cannot add more classes"
-          done
-          endif
-
-        ~set the color based on whether the proper number of slots are allocated
-        if (field[resLeft].value = 0) then
-          @text = "{text clrgrey}"
-        elseif (field[resLeft].value < 0) then
-          @text = "{text clrwarning}"
-          endif
-        @text &= "Add Class"
-        ]]></additem>
-      </table_dynamic>
+      </chooser_table>
     </portal>
 
     <portal
-        id="cWepGroup"
+        id="cHPMP"
         style="tblNormal">
         <table_fixed
-            component="WepGroup"
-            showtemplate="SimpleItem">
+            component="Class"
+            showtemplate="cHPMPPick">
             <headertitle><![CDATA[
-                @text="Weapon Groups"
+                @text="Hit Points"
                 ]]></headertitle>
             </table_fixed>
         </portal>
+
+  <template
+      id="cHPMPPick"
+      name="HP/MP"
+      marginhorz="3"
+      marginvert="2"
+      compset="Class">
+
+      <portal
+          id="cHP1Label"
+          style="lblLarge">
+          <label text="HP: " />
+      </portal>
+
+      <portal
+          id="cHP1"
+          style="editLarge">
+          <edit field="cHP1" />
+      </portal>
+
+      <position><![CDATA[
+        ~set up our height based on our tallest portal
+        height = portal[cHP1Label].height + 10
+
+        ~if this is a "sizing" calculation, we're done
+        doneif (issizing <> 0)
+
+        ~position our tallest portal at the top
+        perform portal[cHP1Label].alignedge[top, 5]
+
+        ~center the other portals vertically
+        perform portal[cHP1].centervert
+
+        ~position the delete portal on the far right
+        perform portal[cHP1Label].alignedge[left,5]
+        perform portal[cHP1].alignrel[ltor,cHP1Label,10]
+
+
+        ]]></position>
+
+      </template>
 
 
   <!-- cPick template
@@ -106,7 +126,7 @@
         key difference. Auto-added abilities such as those conferred by races are
         sorted and colored differently to distinguish their nature.
   -->
-  <template
+  <!-- <template
     id="cPick"
     name="Class Pick"
     compset="Class"
@@ -170,7 +190,7 @@
         endif
       ]]></position>
 
-    </template>
+    </template> -->
 
 
   <!-- abilities layout
@@ -184,21 +204,29 @@
   <layout
     id="class">
     <portalref portal="cClass" taborder="10"/>
-    <portalref portal="cWepGroup" taborder="20" />
+    <portalref portal="cHPMP" taborder="20" />
+    <!-- <portalref portal="cWepGroup" taborder="99" /> -->
+
 
     <!-- This script sizes and positions the layout and its child visual elements. -->
     <position><![CDATA[
       ~freeze our table in advancement mode to disable adding new choices
       ~Note: All freezing must be done *before* any positioning is performed.
+
       if (state.iscreate = 0) then
         portal[cClass].freeze = 1
-        portal[cWepGroup].freeze = 1
+        ~portal[cWepGroup].freeze = 1
         endif
 
       ~position and size the table to span the full layout; it will only use the
       ~vertical space that it actually needs
       perform portal[cClass].autoplace
-      perform portal[cWepGroup].autoplace
+      portal[cClass].top += 5
+      portal[cClass].width = width / 2
+      perform portal[cClass].centerhorz
+      perform portal[cHPMP].alignrel[ttob,cClass,8]
+
+      ~perform portal[cWepGroup].autoplace
       ]]></position>
 
     </layout>

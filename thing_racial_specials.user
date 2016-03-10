@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document signature="Hero Lab Data">
+  <thing id="rsDarkSigh" name="Dark Sight" description="You have Dark Sight, which allows you to see up to 20\nyards in darkness without a light source." compset="RaceSpec" uniqueness="unique">
+    <eval phase="Final" priority="10000"><![CDATA[
+
+  field[spSumm].text = "You can see up to " & " yards in darkness without a light source."]]></eval>
+    </thing>
+  </document>

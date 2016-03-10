@@ -41,6 +41,7 @@
     <value id="NoPersText"/>  <!-- User entered no background text -->
     <value id="CanRead" />    <!-- Identifies if a hero can read a language -->
     <value id="CanWrite" />   <!-- Identifies if a hero can write in a specific language -->
+    <value id="PrimRace" />
     <value id="SecondRace" />
     </group>
 
@@ -159,6 +160,7 @@
     <value id="smArmory"/>
     <value id="smStatbl"/>
     <value id="class" />
+    <value id="background" />
     </group>
 
   <!-- Hide group - controls whether things are hidden in certain contexts
@@ -358,6 +360,11 @@
   <group
       id="SpellTarg"
       maxvalue="100">
+  </group>
+
+  <group
+      id="ClPowWhen"
+      maxvalue="20">
   </group>
 
 

@@ -355,6 +355,14 @@
     id="Mechanics"
     name="Mechanics">
 
+    <field
+      id="mechXP"
+      name="XP Costs"
+      type="derived"
+      style="array"
+      arrayrows="21">
+      </field>
+
     </component>
 
 

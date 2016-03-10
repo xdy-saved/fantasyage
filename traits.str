@@ -157,11 +157,12 @@
     <eval index="2" phase="Ability" priority="10000">
       <before name="Calc resLeft"/>
       <after name="Bound trtUser"/><![CDATA[
-      hero.child[resAP].field[resSpent].value += field[trtUser].value + field[aRaceBonus].value
+      doneif (#resmax[resAP] = 0)
+      hero.child[resAP].field[resSpent].value += field[trtUser].value
       ]]></eval>
 
       <eval index="1" phase="Ability" priority="6000" name="Derived trtFinal"><![CDATA[
-        field[trtFinal].value = field[trtBonus].value + field[trtInPlay].value
+        field[trtFinal].value = field[trtUser].value + field[trtBonus].value + field[trtInPlay].value + field[aRaceBonus].value
         ]]></eval>
 
     </component>
@@ -199,6 +200,7 @@
     <identity group="BackFocus" />
     <identity group="SpellTest" />
     <identity group="RaceFocBen" />
+    <identity group="ClassFocus" />
 
     <!-- Every skill is shown on the "Rolls" mouse-over on the Dashboard/TacCon -->
     <tag group="DashTacCon" tag="Rolls"/>
@@ -420,6 +422,7 @@
         autocompset="no">
 
         <identity group="Talent" />
+        <identity group="StartTal" />
 
         <eval index="1" phase="Setup" priority="5000"><![CDATA[
             perform forward[Talent.?]
@@ -429,6 +432,152 @@
     <component
       id="Class"
       name="Class">
+
+      <field
+        id="cStartHP"
+        name="Starting HP"
+        type="derived">
+        </field>
+
+      <field
+        id="cHP1"
+        name="Class HP Level 1"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cMP1"
+        name="Class MP Level 1"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cHP2"
+        name="Class HP Level 2"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cMP2"
+        name="Class MP Level 2"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cHP3"
+        name="Class HP Level 3"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cMP3"
+        name="Class MP Level 3"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cHP4"
+        name="Class HP Level 4"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cMP4"
+        name="Class MP Level 4"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cHP5"
+        name="Class HP Level 5"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cMP5"
+        name="Class MP Level 5"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cHP6"
+        name="Class HP Level 6"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cMP6"
+        name="Class MP Level 6"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cHP7"
+        name="Class HP Level 7"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cMP7"
+        name="Class MP Level 7"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cHP8"
+        name="Class HP Level 8"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cMP8"
+        name="Class MP Level 8"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cHP9"
+        name="Class HP Level 9"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cMP9"
+        name="Class MP Level 9"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cHP10"
+        name="Class HP Level 10"
+        type="user"
+        maxvalue="6">
+      </field>
+
+      <field
+        id="cMP10"
+        name="Class MP Level 10"
+        type="user"
+        maxvalue="6">
+      </field>
 
       <identity group="TalentFor" />
       <identity group="Class" />
@@ -578,7 +727,8 @@
 
    <component
      id="ClassPower"
-     name="Class Power">
+     name="Class Power"
+     autocompset="no">
 
      </component>
 
@@ -609,6 +759,7 @@
     autocompset="no">
     <identity group="WepGroup" />
     <identity group="WepGroRac" />
+    <identity group="WepGrClass" />
 
     <eval index="1" phase="Setup" priority="5000"><![CDATA[
         ~forward group tags to hero
@@ -640,7 +791,55 @@
 
     <component
       id="RaceSpec"
-      name="Racial Special">
+      name="Racial Special"
+      autocompset="no">
+
+      </component>
+
+    <component
+      id="spFields"
+      name="Special fields"
+      autocompset="no">
+
+    <field
+        id="spValue1"
+        name="spValue1"
+        type="derived">
+    </field>
+
+    <field
+        id="spValue2"
+        name="spValue2"
+        type="derived">
+    </field>
+
+    <field
+        id="spValue3"
+        name="spValue3"
+        type="derived">
+    </field>
+
+    <field
+        id="spValue4"
+        name="spValue4"
+        type="derived">
+    </field>
+
+    <field
+      id="spSumm"
+      name="Special Summary"
+      type="derived"
+      maxlength="250">
+      </field>
+
+      <eval index="1" phase="Render" priority="10000" name="Set spSumm"><![CDATA[
+          ~set summary if the field is stil blank
+          if (field[spSumm].isempty <> 0) then
+             field[spSumm].text = field[summary].text
+             endif
+
+
+          ]]></eval>
 
       </component>
 
@@ -666,6 +865,7 @@
     <compref component="Domain"/>
     <!-- <compref component="CanAdvance"/> -->
     <compref component="Trait" />
+    <compref component="spFields" />
     </compset>
 
   <!-- Ability - all abilities derive from this compset -->
@@ -696,12 +896,16 @@
       <compref component="Talent" />
       <compref component="Activation"/>
       <compref component="AbilReq" />
+      <compref component="spFields" />
+      <!-- <compref component="SpecialTab"/> -->
   </compset>
 
   <compset
       id="ClassSpec">
       <compref component="ClassSpec" />
       <compref component="AbilReq" />
+      <compref component="spFields" />
+      <!-- <compref component="SpecialTab"/> -->
   </compset>
 
   <compset
@@ -726,6 +930,22 @@
       id="Background"
       forceunique="yes">
       <compref component="Background" />
+  </compset>
+
+  <compset
+      id="ClassPower">
+      <compref component="ClassPower" />
+      <compref component="Activation" />
+      <compref component="spFields" />
+      <compref component="SpecialTab"/>
+  </compset>
+
+  <compset
+      id="RaceSpec">
+      <compref component="RaceSpec" />
+      <compref component="spFields" />
+      <compref component="SpecialTab"/>
+
   </compset>
 
   </document>

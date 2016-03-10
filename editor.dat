@@ -84,7 +84,13 @@
       name="Linked Ability for Skill"
       helptext="Select the attribute used to calculate the dice pool for this skill.">
       <it_linkage compset="Ability" linkage="ability"/>
-      </inputthing>
+    </inputthing>
+
+    <inputthing
+        name="Associated Arcana"
+        helptext="Select the associated arcana if the focus needs one.">
+        <it_tagpick group="Arcana" tag="?" />
+    </inputthing>
     </editthing>
 
 
@@ -142,6 +148,12 @@
       summary="This is for classes.">
 
       <inputthing
+          name="Starting Health"
+          helptext="Enter the starting health the class grants to the character.">
+          <it_field field="cStartHP" />
+      </inputthing>
+
+      <inputthing
           name="Primary Abilities"
           helptext="Select the primary ability scores for the class.">
           <it_taglist group="PrimAbil" tag="?" />
@@ -157,6 +169,35 @@
           name="Weapon Groups"
           helptext="Select the weapon groups granted to the class.">
           <it_bootlist compset="WepGroup" />
+      </inputthing>
+
+      <inputthing
+          name="Additional Weapon Groups"
+          helptext="Select the weapon groups that can be selected at first level beyond those automatically granted.">
+          <it_taglist group="WepGrClass" tag="?" />
+      </inputthing>
+
+      <inputthing
+          name="Starting Talents"
+          helptext="Select talents that can be selected at level 1.">
+          <it_taglist group="StartTal" tag="?" />
+      </inputthing>
+
+      <inputthing
+          name="Class Focuses"
+          helptext="If the class can select a focus from a specific list of focuses, select them here.">
+          <it_taglist group="ClassFocus" tag="f?" />
+      </inputthing>
+
+      <inputthing
+          name="Class Powers"
+          helptext="Select the class powers and assign the levels they are gained.">
+          <it_bootcustom compset="ClassPower">
+              <inputthing
+                  name="Gain at Level?">
+                  <it_tagpick group="ClPowWhen" tag="?" />
+              </inputthing>
+          </it_bootcustom>
       </inputthing>
 
 
@@ -254,6 +295,16 @@
     </inputthing>
 
     <inputthing
+        name="Racial Specials"
+        helptext="Attach racial specials this race may have.">
+        <it_bootcustom compset="RaceSpec">
+            <inputthing name="spValue1">
+                <it_field field="spValue1" />
+            </inputthing>
+        </it_bootcustom>
+    </inputthing>
+
+    <inputthing
         name="Language"
         helptext="Select the languages known by the race.">
         <it_bootcustom compset="Language">
@@ -271,7 +322,7 @@
     <inputthing
         name="Racial Focus"
         helptext="These are the focuses selected by the race, but not from the background benefits.">
-        <it_taglist group="RaceFocus" tag="?" />
+        <it_taglist group="RaceFocus" tag="f?" />
     </inputthing>
 
     <inputthing
@@ -283,7 +334,7 @@
     <inputthing
         name="Racial Benefit Focus"
         helptext="These are the focuses that can be chosen as racial benefit.">
-        <it_taglist group="RaceFocBen" tag="?" />
+        <it_taglist group="RaceFocBen" tag="f?" />
     </inputthing>
 
     <inputthing
@@ -502,6 +553,35 @@
       </inputthing>
     </editthing>
 
+    <editthing
+        name="Racial Specials"
+        compset="RaceSpec"
+        prefix="rs"
+        description="Some races have special abilities."
+        summary="Define special abilities meant for races.">
+
+        <inputthing
+            name="spValue1">
+            <it_field field="spValue1" />
+        </inputthing>
+
+        <inputthing
+            name="spValue2">
+            <it_field field="spValue2" />
+        </inputthing>
+
+        <inputthing
+            name="spValue3">
+            <it_field field="spValue3" />
+        </inputthing>
+
+        <inputthing
+            name="spValue4">
+            <it_field field="spValue4" />
+        </inputthing>
+
+    </editthing>
+
 
   <!-- Shield editthing -->
   <editthing
@@ -539,6 +619,12 @@
     name="Mechanic"
     description="A mechanics thing will be automatically added to every character to apply its effects. There is no built-in logic for mechanics,{br}as they provide a means for the user to customize everything to work as he chooses. As such, there are no fields and{br}everything is assumed to be done through scripts."
     summary="Defines a set of custom behaviors that are defined by the user and applied to each character.">
+
+    <inputthing
+        name="XP Cost"
+        helptext="Enter an XP table to change when levels are granted.">
+        <it_field field="mechXP" />
+    </inputthing>
     </editthing>
 
 

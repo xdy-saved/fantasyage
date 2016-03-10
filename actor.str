@@ -117,6 +117,51 @@
         ]]></finalize>
       </field>
 
+    <field
+      id="acLevel"
+      name="Character Level"
+      type="derived">
+
+      <calculate phase="Level" priority="50" name="Calc Char Lev">
+          <after name="Calc XP Max" /><![CDATA[
+          ~declare input variables
+          var curlevel as number
+          var curxp as number
+          var lev as number
+          var xp as number
+
+          call CalcCurLev
+          @value = minimum(curlevel, 20)
+
+          ]]></calculate>
+      </field>
+
+    <field
+      id="acXPNeeded"
+      name="XP Needed for Next Level"
+      type="derived">
+      <calculate phase="Level" priority="150" name="Calc XP Needed for Next Level">
+          <after name="Calc Next XP" /><![CDATA[
+          @value = maximum(field[acNextXP].value - #resmax[resXP], 0)
+          ]]></calculate>
+      </field>
+
+    <field
+      id="acNextXP"
+      name="XP Total For Next Level"
+      type="derived">
+      <calculate phase="Level" priority="100" name="Calc Next XP">
+          <after name="Calc Char Lev" /><![CDATA[
+          var nextxp as number
+          call CalcNextXP
+          if (nextxp >= 60000) then
+            @value=0
+          else
+             @value=nextxp
+             endif
+          ]]></calculate>
+      </field>
+
     <!-- Health summary for display -->
     <field
       id="acHPSumm"

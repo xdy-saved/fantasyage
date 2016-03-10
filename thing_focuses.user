@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document signature="Hero Lab Data">
-  <thing id="DELTEME" name="Constitution ()" compset="Focus" maxlimit="2">
-    <tag group="explicit" tag="3"/>
-    <link linkage="ability" thing="aCON"/>
-    </thing>
   <thing id="fBlkPowder" name="Accuracy (Black Powder)" description="Proficiency with weapons from the Black Powder Weapon Group. Black powder weapons are not in every campaign setting, so ask your GM before taking them." compset="Focus" maxlimit="2">
     <fieldval field="shortname" value="Black Powder"/>
     <tag group="explicit" tag="1"/>
@@ -43,11 +39,11 @@
     <tag group="explicit" tag="1"/>
     <link linkage="ability" thing="aACC"/>
     </thing>
-  <thing id="fAccuracy" name="Accuracy" compset="Focus" uniqueness="unique" isshowonly="yes">
+  <thing id="hAccuracy" name="Accuracy" compset="Focus" uniqueness="unique" isshowonly="yes">
     <tag group="explicit" tag="1"/>
     <link linkage="ability" thing="aACC"/>
     </thing>
-  <thing id="fCommunica" name="Communication" compset="Focus" maxlimit="2" uniqueness="unique" isshowonly="yes">
+  <thing id="hCommunica" name="Communication" compset="Focus" uniqueness="unique" isshowonly="yes">
     <tag group="explicit" tag="2"/>
     <link linkage="ability" thing="aCOM"/>
     </thing>
@@ -106,7 +102,7 @@
     <tag group="explicit" tag="2"/>
     <link linkage="ability" thing="aCOM"/>
     </thing>
-  <thing id="fConstitut" name="Constitution" compset="Focus" maxlimit="2" uniqueness="unique" isshowonly="yes">
+  <thing id="hConstitut" name="Constitution" compset="Focus" uniqueness="unique" isshowonly="yes">
     <tag group="explicit" tag="3"/>
     <link linkage="ability" thing="aCON"/>
     </thing>
@@ -134,5 +130,357 @@
     <fieldval field="shortname" value="Swimming"/>
     <tag group="explicit" tag="3"/>
     <link linkage="ability" thing="aCON"/>
+    </thing>
+  <thing id="hDexterity" name="Dexterity" compset="Focus" uniqueness="unique" isshowonly="yes">
+    <tag group="explicit" tag="4"/>
+    <link linkage="ability" thing="aDEX"/>
+    </thing>
+  <thing id="fStealth" name="Dexterity (Stealth)" description="Sneaking about quietly and out of sight." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Stealth"/>
+    <tag group="explicit" tag="4"/>
+    <link linkage="ability" thing="aDEX"/>
+    </thing>
+  <thing id="fTraps" name="Dexterity (Traps)" description="Detecting and disarming traps and other mechanical devices." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Traps"/>
+    <tag group="explicit" tag="4"/>
+    <link linkage="ability" thing="aDEX"/>
+    </thing>
+  <thing id="fSailing" name="Dexterity (Sailing)" description="Operating and maintaining a sailing ship." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Sailing"/>
+    <tag group="explicit" tag="4"/>
+    <link linkage="ability" thing="aDEX"/>
+    </thing>
+  <thing id="fLockPick" name="Dexterity (Lock Picking)" description="Opening locks without using keys." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Lock Picking"/>
+    <tag group="explicit" tag="4"/>
+    <link linkage="ability" thing="aDEX"/>
+    </thing>
+  <thing id="fAcrobatic" name="Dexterity (Acrobatics)" description="Executing gymnastic, balancing, and tumbling maneuvers." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Acrobatics"/>
+    <tag group="explicit" tag="4"/>
+    <link linkage="ability" thing="aDEX"/>
+    </thing>
+  <thing id="fRiding" name="Dexterity (Riding)" description="Directing a mount such as a horse or pony." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Riding"/>
+    <tag group="explicit" tag="4"/>
+    <link linkage="ability" thing="aDEX"/>
+    </thing>
+  <thing id="fInit" name="Dexterity (Initiative)" description="Acting quickly in tense situations." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Initiative"/>
+    <tag group="explicit" tag="4"/>
+    <link linkage="ability" thing="aDEX"/>
+    </thing>
+  <thing id="fLegerdema" name="Dexterity (Legerdemain)" description="Using sleight of hand to trick others, hide things, and pick pockets." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Legerdemain"/>
+    <tag group="explicit" tag="4"/>
+    <link linkage="ability" thing="aDEX"/>
+    </thing>
+  <thing id="fCrafting" name="Dexterity (Crafting)" description="Making items with manual skills, like woodworking, sculpting, leather working, glassblowing, etc." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Crafting"/>
+    <tag group="explicit" tag="4"/>
+    <link linkage="ability" thing="aDEX"/>
+    </thing>
+  <thing id="fCalligrap" name="Dexterity (Calligraphy)" description="Writing with artful penmanship." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Calligraphy"/>
+    <tag group="explicit" tag="4"/>
+    <link linkage="ability" thing="aDEX"/>
+    </thing>
+  <thing id="hFighting" name="Fighting" compset="Focus" uniqueness="unique" isshowonly="yes">
+    <tag group="explicit" tag="5"/>
+    <link linkage="ability" thing="aFIG"/>
+    </thing>
+  <thing id="fAxes" name="Fighting (Axes)" description="Proficiency with weapons from the Axes Group" compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Axes"/>
+    <tag group="explicit" tag="5"/>
+    <link linkage="ability" thing="aFIG"/>
+    </thing>
+  <thing id="fLances" name="Fighting (Lances)" description="Proficiency with weapons of the Lances Group." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Lances"/>
+    <tag group="explicit" tag="5"/>
+    <link linkage="ability" thing="aFIG"/>
+    </thing>
+  <thing id="fSpears" name="Fighting (Spears)" description="Proficiency with weapons from the Spears Group." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Spears"/>
+    <tag group="explicit" tag="5"/>
+    <link linkage="ability" thing="aFIG"/>
+    </thing>
+  <thing id="fPolearms" name="Fighting (Polearms)" description="Proficiency with weapons of the Polearms Group." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Polearms"/>
+    <tag group="explicit" tag="5"/>
+    <link linkage="ability" thing="aFIG"/>
+    </thing>
+  <thing id="fHvyBlades" name="Fighting (Heavy Blades)" description="Proficiency with weapons from the Heavy Blades Group." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Heavy Blades"/>
+    <tag group="explicit" tag="5"/>
+    <link linkage="ability" thing="aFIG"/>
+    </thing>
+  <thing id="fBludgeons" name="Fighting (Bludgeons)" description="Proficiency with weapons from the Bludgeons Group." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Bludegeons"/>
+    <tag group="explicit" tag="5"/>
+    <link linkage="ability" thing="aFIG"/>
+    </thing>
+  <thing id="hIntellige" name="Intelligence" compset="Focus" uniqueness="unique" isshowonly="yes">
+    <fieldval field="shortname" value="Intelligence"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="hPerceptio" name="Perception" compset="Focus" uniqueness="unique" isshowonly="yes">
+    <tag group="explicit" tag="7"/>
+    <link linkage="ability" thing="aPER"/>
+    </thing>
+  <thing id="hStrength" name="Strength" compset="Focus" uniqueness="unique" isshowonly="yes">
+    <tag group="explicit" tag="8"/>
+    <link linkage="ability" thing="aSTR"/>
+    </thing>
+  <thing id="hWillpower" name="Willpower" compset="Focus" uniqueness="unique" isshowonly="yes">
+    <tag group="explicit" tag="9"/>
+    <link linkage="ability" thing="aWILL"/>
+    </thing>
+  <thing id="fTasting" name="Perception (Tasting)" description="Using your gustatory sense." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Tasting"/>
+    <tag group="explicit" tag="7"/>
+    <link linkage="ability" thing="aPER"/>
+    </thing>
+  <thing id="fSeeing" name="Perception (Seeing)" description="Using your visual sense." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Seeing"/>
+    <tag group="explicit" tag="7"/>
+    <link linkage="ability" thing="aPER"/>
+    </thing>
+  <thing id="fHearing" name="Perception (Hearing)" description="Using your auditory sense." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Hearing"/>
+    <tag group="explicit" tag="7"/>
+    <link linkage="ability" thing="aPER"/>
+    </thing>
+  <thing id="fSmelling" name="Perception (Smelling)" description="Using your olfactory sense." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Smelling"/>
+    <tag group="explicit" tag="7"/>
+    <link linkage="ability" thing="aPER"/>
+    </thing>
+  <thing id="fTouching" name="Perception (Touching)" description="Using your tactile sense." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Touching"/>
+    <tag group="explicit" tag="7"/>
+    <link linkage="ability" thing="aPER"/>
+    </thing>
+  <thing id="fSearching" name="Perception (Searching)" description="Finding things that are hidden or obscured, such as secret doors." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Searching"/>
+    <tag group="explicit" tag="7"/>
+    <link linkage="ability" thing="aPER"/>
+    </thing>
+  <thing id="fTracking" name="Perception (Tracking)" description="Following tracks and other signs of passage." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Tracking"/>
+    <tag group="explicit" tag="7"/>
+    <link linkage="ability" thing="aPER"/>
+    </thing>
+  <thing id="fEmpathy" name="Perception (Empathy)" description="Discerning the feelings and emotions of others." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Empathy"/>
+    <tag group="explicit" tag="7"/>
+    <link linkage="ability" thing="aPER"/>
+    </thing>
+  <thing id="fDriving" name="Strength (Driving)" description="Directing and guiding carts, carriages, and other wheeled vehicles." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Driving"/>
+    <tag group="explicit" tag="8"/>
+    <link linkage="ability" thing="aSTR"/>
+    </thing>
+  <thing id="fClimbing" name="Strength (Climbing)" description="Scaling walls and other vertical obstacles." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Climbing"/>
+    <tag group="explicit" tag="8"/>
+    <link linkage="ability" thing="aSTR"/>
+    </thing>
+  <thing id="fJumping" name="Strength (Jumping)" description="Springing and leaping." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Jumping"/>
+    <tag group="explicit" tag="8"/>
+    <link linkage="ability" thing="aSTR"/>
+    </thing>
+  <thing id="fMight" name="Strength (Might)" description="Performing feats of raw power, such as lifting or holding up heavy objects." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Might"/>
+    <tag group="explicit" tag="8"/>
+    <link linkage="ability" thing="aSTR"/>
+    </thing>
+  <thing id="fSmithing" name="Strength (Smithing)" description="Forging items made of metal, from weapons to jewelry." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Smithing"/>
+    <tag group="explicit" tag="8"/>
+    <link linkage="ability" thing="aSTR"/>
+    </thing>
+  <thing id="fIntimidat" name="Strength (Intimidation)" description="Overawing others with physical presence and threats." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Intimidation"/>
+    <tag group="explicit" tag="8"/>
+    <link linkage="ability" thing="aSTR"/>
+    </thing>
+  <thing id="fFaith" name="Willpower (Faith)" description="Deriving inner strength through spiritual or moral belief." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Faith"/>
+    <tag group="explicit" tag="9"/>
+    <link linkage="ability" thing="aWILL"/>
+    </thing>
+  <thing id="fSelfDisc" name="Willpower (Self-Discipline)" description="Focusing your mental energy or controlling your impulses and emotions." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Self-Discipline"/>
+    <tag group="explicit" tag="9"/>
+    <link linkage="ability" thing="aWILL"/>
+    </thing>
+  <thing id="fMorale" name="Willpower (Morale)" description="Maintaining good spirits and confidence in yourself or your group. NPCs tend to use this focus more than Player Characters." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Morale"/>
+    <tag group="explicit" tag="9"/>
+    <link linkage="ability" thing="aWILL"/>
+    </thing>
+  <thing id="fCourage" name="Willpower (Courage)" description="Overcoming fear in the face of adversity." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Courage"/>
+    <tag group="explicit" tag="9"/>
+    <link linkage="ability" thing="aWILL"/>
+    </thing>
+  <thing id="fAir" name="Intelligence (Air Arcana)" description="Using the specified spell arcana." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Air Arcana"/>
+    <tag group="Arcana" tag="Air"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fHeroic" name="Intelligence (Heroic Arcana)" description="Using the specified spell arcana." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Heroic Arcana"/>
+    <tag group="Arcana" tag="Heroic"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fFire" name="Intelligence (Fire Arcana)" description="Using the specified spell arcana." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Fire Arcana"/>
+    <tag group="Arcana" tag="Fire"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fEarth" name="Intelligence (Earch Arcana)" description="Using the specified spell arcana." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Earth Arcana"/>
+    <tag group="Arcana" tag="Earth"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fFate" name="Intelligence (Fate Arcana)" description="Using the specified spell arcana." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Fate Arcana"/>
+    <tag group="Arcana" tag="Fate"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fWood" name="Intelligence (Wood Arcana)" description="Using the specified spell arcana." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Wood Arcana"/>
+    <tag group="Arcana" tag="Wood"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fPower" name="Intelligence (Power Arcana)" description="Using the specified spell arcana." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Power Arcana"/>
+    <tag group="Arcana" tag="Power"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fHealing" name="Intelligence (Healing Arcana)" description="Using the specified spell arcana." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Healing Arcana"/>
+    <tag group="Arcana" tag="Healing"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fWater" name="Intelligence (Water Arcana)" description="Using the specified spell arcana." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Water Arcana"/>
+    <tag group="Arcana" tag="Water"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fLightning" name="Intelligence (Lightning Arcana)" description="Using the specified spell arcana." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Lightning Arcana"/>
+    <tag group="Arcana" tag="Lightning"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fShadow" name="Intelligence (Shadow Arcana)" description="Using the specified spell arcana." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Shadow Arcana"/>
+    <tag group="Arcana" tag="Shadow"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fDivinatio" name="Intelligence (Divination Arcana)" description="Using the specified spell arcana." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Divination Arcana"/>
+    <tag group="Arcana" tag="Divination"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fBrewing" name="Intelligence (Brewing)" description="Making ale, mead, and other concoctions." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Brewing"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fArcaneLor" name="Intelligence (Arcane Lore)" description="Knowing about magic and its traditions." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Arcane Lore"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fNavigatio" name="Intelligence (Navigation)" description="Planning and following a route from one place to another." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Navigation"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fResearch" name="Intelligence (Research)" description="Making a systematic investigation, usually using records, archives, and books." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Research"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fWriting" name="Intelligence (Writing)" description="Expressing yourself with the written word." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Writing"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fReligious" name="Intelligence (Religious Lore)" description="Knowing religious traditions and practices." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Religious Lore"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fMusicalLo" name="Intelligence (Musical Lore)" description="Knowing musical traditions and songs." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Musical Lore"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fNatureLor" name="Intelligence (Natural Lore)" description="Knowing natural flora and fauna." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Natural Lore"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fMilitaryL" name="Intelligence (Military Lore)" description="Knowing strategy, tactics, and famous applications thereof." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Military Lore"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fHeraldry" name="Intelligence (Heraldry)" description="Knowing coats of arms and royal families." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Heraldry"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fHistoryLo" name="Intelligence (Historical Lore)" description="Knowing important events and personalities from the past." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Historical Lore"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fEngineeri" name="Intelligence (Engineering)" description="Knowing the practicalities of construction, building, and invention." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Engineering"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fCartograp" name="Intelligence (Cartography)" description="Making and reading maps." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Cartography"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fCryptogra" name="Intelligence (Cryptography)" description="Creating and deciphering codes and ciphers." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Cryptography"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fHeal" name="Intelligence (Healing)" description="Aiding the wounded and sick." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Healing"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fEvaluatio" name="Intelligence (Evaluation)" description="Determining the value of goods and objets d&apos;art." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Evaluation"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
+    </thing>
+  <thing id="fCultureLo" name="Intelligence (Cultural Lore)" description="Knowing the traditions and beliefs of various cultures." compset="Focus" maxlimit="2">
+    <fieldval field="shortname" value="Cultural Lore"/>
+    <tag group="explicit" tag="6"/>
+    <link linkage="ability" thing="aINT"/>
     </thing>
   </document>

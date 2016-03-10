@@ -37,6 +37,52 @@
     money = "$" & money
     ]]></procedure>
 
+  <procedure id="CalcCurLev" scripttype="none"><![CDATA[
+      ~declare needed variables
+      var curlevel as number
+      var curxp as number
+      var lev as number
+      var xp as number
+
+      ~set current xp value
+      curxp = #resmax[resXP]
+
+      for lev = 1 to 21
+
+          if (lev < 7) then
+              xp = (lev - 1) * 2000
+          elseif (lev < 13) then
+              xp = 10000 + (lev-6)*3000
+          else
+              xp = 28000 + (lev-12)*4000
+              endif
+
+          if (xp > curxp) then
+              curlevel =lev - 1
+              done
+              endif
+
+          next
+      ]]></procedure>
+
+  <procedure id="CalcNextXP" scripttype="none"><![CDATA[
+
+      var nextxp as number
+      var lev as number
+
+      lev = minimum(herofield[acLevel].value, 19)
+
+      if (lev < 6) then
+          nextxp = (lev) * 2000
+      elseif (lev < 12) then
+          nextxp = 10000 + (lev-5)*3000
+      else
+          nextxp = 28000 + (lev-11)*4000
+          endif
+
+          nextxp = maximum(nextxp, 0)
+      ]]></procedure>
+
 
   <!-- Procedure MoneyBare
         Handles the formatting of the money value without prepending the currency

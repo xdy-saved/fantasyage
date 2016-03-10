@@ -36,6 +36,14 @@
       </font>
     </resource>
 
+    <resource
+      id="fnteditLrg">
+      <font
+        face="Arial"
+        size="44">
+        </font>
+      </resource>
+
   <!-- font used when much larger is needed (15pt) -->
   <resource
     id="fntxlarge">
@@ -863,6 +871,17 @@
       font="fntedit">
       </style_edit>
     </style>
+
+    <style
+      id="editLarge"
+      border="sunken">
+      <style_edit
+        textcolorid="clredittxt"
+        backcolorid="clreditbck"
+        font="fnteditLrg"
+        alignment="center">
+    </style_edit>
+      </style>
 
   <!-- edit portals that have the text centered within the portal -->
   <style

@@ -66,7 +66,40 @@
     <eval index="1" phase="Setup" priority="1000"><![CDATA[
       field[resMax].value = 1
       ]]></eval>
+  </thing>
+
+  <thing
+    id="resPriAbil"
+    name="Primary Ability Advancements"
+    compset="Resource">
+    <fieldval field="resObject" value="Primary Ability Advancement"/>
+
+    <!-- Automatically add the resource to every actor -->
+    <tag group="Helper" tag="Bootstrap"/>
+
+    <!-- Use the starting ability slots as our initial maximum -->
+    <eval index="1" phase="PostLevel" priority="1000"><![CDATA[
+      field[resMax].value += round(herofield[acLevel].value / 2, 0, -1)
+      ]]></eval>
     </thing>
+
+    <thing
+      id="resSecAbil"
+      name="Secondary Ability Advancements"
+      compset="Resource">
+      <fieldval field="resObject" value="Secondary Ability Advancement"/>
+
+      <!-- Automatically add the resource to every actor -->
+      <tag group="Helper" tag="Bootstrap"/>
+
+      <!-- Use the starting ability slots as our initial maximum -->
+      <eval index="1" phase="PostLevel" priority="1000"><![CDATA[
+        field[resMax].value += round(herofield[acLevel].value / 2, 0, 1) - 1
+        ]]></eval>
+      </thing>
+
+
+
 
 
   <!-- Experience points resource to track the pool of XP accrued and spent -->
@@ -100,10 +133,10 @@
     <tag group="Helper" tag="Bootstrap"/>
 
     <!-- Base our maximum on the accrued XP -->
-    <eval index="1" phase="Setup" priority="2000">
+    <!-- <eval index="1" phase="Setup" priority="2000">
       <after name="Calc XP Max"/><![CDATA[
       field[resMax].value = round(#resmax[resXP] / 20,0,-1)
-      ]]></eval>
+      ]]></eval> -->
 
     </thing>
 
