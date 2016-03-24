@@ -17,9 +17,9 @@
 
   <game
     game="Fantasy AGE"
-    publisher="TBD"
-    website="http://www.domain.com/"
-    copyright="TBD"
+    publisher="Green Ronin"
+    website="http://www.greenronin.com/"
+    copyright="2015"
     legaloutput="TBD">
     </game>
 
@@ -28,7 +28,7 @@
   -->
 
   <author
-    author="TBD"
+    author="Andrew Betts"
     email="name@domain.com"
     website="www.domain.com">
     </author>

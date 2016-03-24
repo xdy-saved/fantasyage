@@ -276,9 +276,9 @@
   <!-- bitmap for use as the background of label portals designated as a "title" -->
   <resource
     id="titleback"
-    isbuiltin="yes">
+    isbuiltin="no">
     <bitmap
-      bitmap="mainwindow.bmp">
+      bitmap="mainwindow10.bmp">
       </bitmap>
     </resource>
 

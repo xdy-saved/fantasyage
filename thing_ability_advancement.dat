@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains the assortment of attributes possessed by every actor for the
+      game system. The display order of attributes is controlled via the assignment of
+      an "AbilityAdv" tag with the relative position of each.
+-->
+
+<document signature="Hero Lab Data">
+
+  <!-- Sample Attribute
+  -->
+  <thing
+    id="aaACC"
+    name="+1 Accuracy"
+    compset="AbilityAdv"
+    isunique="yes"
+    description="Description goes here">
+
+    <tag group="AbilityAdv" tag="aACC"/>
+    </thing>
+
+    <thing
+      id="aaCOM"
+      name="+1 Communication"
+      compset="AbilityAdv"
+      isunique="yes"
+      description="Description goes here">
+
+      <tag group="AbilityAdv" tag="aCOM"/>
+      </thing>
+
+    <thing
+      id="aaCON"
+      name="+1 Constitution"
+      compset="AbilityAdv"
+      isunique="yes"
+      description="Description goes here">
+
+        <tag group="AbilityAdv" tag="aCON"/>
+        </thing>
+
+    <thing
+      id="aaDEX"
+      name="+1 Dexterity"
+      compset="AbilityAdv"
+      isunique="yes"
+      description="Description goes here">
+
+      <tag group="AbilityAdv" tag="aDEX"/>
+    </thing>
+
+    <thing
+      id="aaFIG"
+      name="+1 Fighting"
+      compset="AbilityAdv"
+      isunique="yes"
+      description="Description goes here">
+
+      <tag group="AbilityAdv" tag="aFIG"/>
+    </thing>
+
+    <thing
+      id="aaINT"
+      name="+1 Intelligence"
+      compset="AbilityAdv"
+      isunique="yes"
+      description="Description goes here">
+
+      <tag group="AbilityAdv" tag="aINT"/>
+    </thing>
+
+    <thing
+      id="aaPER"
+      name="+1 Perception"
+      compset="AbilityAdv"
+      isunique="yes"
+      description="Description goes here">
+
+      <tag group="AbilityAdv" tag="aPER"/>
+    </thing>
+
+
+   <thing
+    id="aaSTR"
+    name="+1 Strength"
+    compset="AbilityAdv"
+    isunique="yes"
+    description="Description goes here">
+
+    <tag group="AbilityAdv" tag="aSTR"/>
+    </thing>
+
+    <thing
+      id="aaWILL"
+      name="+1 Willpower"
+      compset="AbilityAdv"
+      isunique="yes"
+      description="Description goes here">
+
+      <tag group="AbilityAdv" tag="aWILL"/>
+    </thing>
+
+  </document>

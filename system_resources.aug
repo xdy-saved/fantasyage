@@ -31,9 +31,9 @@
   <resource
     id="mainwindow"
     issystem="yes"
-    isbuiltin="yes">
+    isbuiltin="no">
     <bitmap
-      bitmap="mainwindow.bmp">
+      bitmap="mainwindow9.bmp">
       </bitmap>
     </resource>
 
@@ -52,9 +52,9 @@
   <resource
     id="background"
     issystem="yes"
-    isbuiltin="yes">
+    isbuiltin="no">
     <bitmap
-      bitmap="background.bmp">
+      bitmap="background6.bmp">
       </bitmap>
     </resource>
 
@@ -72,9 +72,9 @@
   <resource
     id="staticpan"
     issystem="yes"
-    isbuiltin="yes">
+    isbuiltin="no">
     <bitmap
-      bitmap="mainwindow.bmp">
+      bitmap="mainwindow6.bmp">
       </bitmap>
     </resource>
 
@@ -199,19 +199,22 @@
   <resource
     id="sumtitle"
     issystem="yes"
-    isbuiltin="yes">
-    <bitmap
+    isbuiltin="no">
+    <!-- <bitmap
       bitmap="summary_title.bmp">
-      </bitmap>
+      </bitmap> -->
+      <bitmap
+        bitmap="background10.bmp">
+        </bitmap>
     </resource>
 
   <!-- tile bitmap used as background within summary panels -->
   <resource
     id="sumbackgrd"
     issystem="yes"
-    isbuiltin="yes">
+    isbuiltin="no">
     <bitmap
-      bitmap="background.bmp">
+      bitmap="background6.bmp">
       </bitmap>
     </resource>
 

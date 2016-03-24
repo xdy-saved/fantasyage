@@ -141,9 +141,11 @@
     <identity group="DmgOver" />
     <identity group="WepAbility" />
     <identity group="RaceAbilBe" />
+    <identity group="AbilityAdv" />
 
     <!-- Attributes have a minimum trait value of 1 -->
-    <eval index="1" phase="Initialize" priority="3000"><![CDATA[
+    <eval index="1" phase="Initialize" priority="3000">
+        <after name="Bount trtUser" /><![CDATA[
       if (herofield[acStartAP].value = 0) then
         field[trtMinimum].value = -2
         field[trtMaximum].value = 4
@@ -215,7 +217,17 @@
         perform linkage[ability].pulltags[FocusAbil.?]
 
 
-        ]]></eval>
+    ]]></eval>
+
+    <eval index="3" phase="PostLevel" priority="3000">
+        <after name="Bount trtUser" /><![CDATA[
+        field[trtMinimum].value = 2
+        field[trtMaximum].value = 2
+
+        if (herofield[acLevel].value >= 11) then
+            field[trtMaximum].value +=1
+            endif
+    ]]></eval>
 
     </component>
 
@@ -736,6 +748,13 @@
      id="AbilityAdv"
      name="Ability Advancement">
 
+     <eval index="1" phase="PostAbil" priority="1000"><![CDATA[
+         ~Set the cost of each ability
+         perform hero.findchild[Ability,tagids[AbilityAdv.?]].setfocus
+
+
+         ]]></eval>
+
      </component>
 
    <component
@@ -825,23 +844,7 @@
         type="derived">
     </field>
 
-    <field
-      id="spSumm"
-      name="Special Summary"
-      type="derived"
-      maxlength="250">
-      </field>
-
-      <eval index="1" phase="Render" priority="10000" name="Set spSumm"><![CDATA[
-          ~set summary if the field is stil blank
-          if (field[spSumm].isempty <> 0) then
-             field[spSumm].text = field[summary].text
-             endif
-
-
-          ]]></eval>
-
-      </component>
+  </component>
 
 
   <!-- Define various component sets associated with the components defined above.

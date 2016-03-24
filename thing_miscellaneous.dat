@@ -98,6 +98,37 @@
         ]]></eval>
       </thing>
 
+      <thing
+        id="resPrimFoc"
+        name="Primary Focus Advancements"
+        compset="Resource">
+        <fieldval field="resObject" value="Primary Focus Advancement"/>
+
+        <!-- Automatically add the resource to every actor -->
+        <tag group="Helper" tag="Bootstrap"/>
+
+        <!-- Use the starting ability slots as our initial maximum -->
+        <eval index="1" phase="PostLevel" priority="1000"><![CDATA[
+          field[resMax].value += round(herofield[acLevel].value / 2, 0, -1)
+          ]]></eval>
+        </thing>
+
+      <thing
+        id="resSecFoc"
+        name="Secondary Focus Advancements"
+        compset="Resource">
+        <fieldval field="resObject" value="Secondary Focus Advancement"/>
+
+        <!-- Automatically add the resource to every actor -->
+        <tag group="Helper" tag="Bootstrap"/>
+
+        <!-- Use the starting ability slots as our initial maximum -->
+        <eval index="1" phase="PostLevel" priority="1000"><![CDATA[
+          field[resMax].value += round(herofield[acLevel].value / 2, 0, 1) - 1
+          ]]></eval>
+        </thing>
+
+
 
 
 

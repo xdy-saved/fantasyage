@@ -3,6 +3,6 @@
   <thing id="rsDarkSigh" name="Dark Sight" description="You have Dark Sight, which allows you to see up to 20\nyards in darkness without a light source." compset="RaceSpec" uniqueness="unique">
     <eval phase="Final" priority="10000"><![CDATA[
 
-  field[spSumm].text = "You can see up to " & " yards in darkness without a light source."]]></eval>
+  field[spSumm].text = "You can see up to " & field[spValue1].value & " yards in darkness without a light source."]]></eval>
     </thing>
   </document>

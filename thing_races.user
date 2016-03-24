@@ -2,7 +2,7 @@
 <document signature="Hero Lab Data">
   <thing id="rDwarf" name="Dwarf" description="Courageous and stalwart, dwarves are known for their skill at arms and their talent as miners and builders. They call the hills, mountains, and underground cities home, but many dwarves are wanderers or merchants, responsible for bringing both trade and news back to their holdfasts. Dwarf enclaves are also common in human cities. While not xenophobic, they are considered gruff and exclusionary by many of the other races. However, once a dwarf considers someone a friend, they are loyal and kind forever after. By the same token, a dwarf who&apos;s been betrayed has a long memory and will bear that grudge for centuries.{br}{br}Dwarves are organized into clans of varying sizes, which are connected by a web of alliances and rivalries. The amount of responsibility an individual dwarf holds depends entirely on their standing in the clan. A young but trustworthy dwarf could hold significantly more power than an older, more experienced family member who&apos;s proven unreliable.{br}{br}Not as small as halflings, nor as tall as humans, adult dwarves range in height from four to five feet, but are stocky and solidly built. Dwarves are famous for their beards, which they grow long and wear plaited, braided, in tails, or any number of other styles." compset="Race" uniqueness="unique">
     <fieldval field="rCON" value="1"/>
-    <tag group="RaceFocus" tag="fDrinking"/>
+    <fieldval field="rSpeed" value="8"/>
     <tag group="RaceFocus" tag="fEvaluatio"/>
     <tag group="RaceGain" tag="rbFIG"/>
     <tag group="RaceGain" tag="rbSTR"/>
@@ -13,9 +13,7 @@
     <tag group="RaceFocBen" tag="fHistoryLo"/>
     <tag group="RaceFocBen" tag="fSmithing"/>
     <tag group="WepGroRac" tag="wgAxes"/>
-    <bootstrap thing="rsDarkSigh">
-      <assignval field="spValue1" value="20"/>
-      </bootstrap>
+    <tag group="RaceFocus" tag="fDrinking"/>
     <bootstrap thing="lCommon">
       <autotag group="Helper" tag="CanWrite"/>
       <autotag group="Helper" tag="CanRead"/>
@@ -24,10 +22,11 @@
       <autotag group="Helper" tag="CanWrite"/>
       <autotag group="Helper" tag="CanRead"/>
       </bootstrap>
+    <bootstrap thing="rsDarkSigh">
+      <assignval field="spValue1" value="20"/>
+      </bootstrap>
     </thing>
   <thing id="rMixHerita" name="Mixed Heritage" description="You get to select your primary and secondary race." compset="Race" uniqueness="unique">
-    <eval phase="PostLevel" priority="10000">
-
-   perform hero.assign[Hero.HalfBreed]</eval>
+    <eval phase="PostLevel" priority="10000">perform hero.assign[Hero.HalfBreed]</eval>
     </thing>
   </document>

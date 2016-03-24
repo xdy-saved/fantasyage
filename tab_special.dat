@@ -51,7 +51,7 @@
   -->
   <template
     id="spSpecial"
-    name="Sepcial Tab Pick"
+    name="Special Tab Pick"
     compset="SpecialTab"
     marginhorz="3"
     marginvert="3">
@@ -81,21 +81,9 @@
       </portal>
 
     <portal
-      id="source"
+      id="summary"
       style="lblSecond">
-      <label>
-        <labeltext><![CDATA[
-          ~determine the source type
-          var source as string
-          source = tagnames[SpecialTab.?,","]
-          if (length(source) = 0) then
-            source = "????"
-            endif
-
-          ~piece the source together
-          @text = "(" & source & ")"
-          ]]></labeltext>
-        </label>
+      <label field="spSumm" />
       </portal>
 
     <portal
@@ -120,17 +108,17 @@
       ~if this is a "sizing" calculation, we're done
       doneif (issizing <> 0)
 
-      ~center the portals vertically, except for the source, which should share the
+      ~center the portals vertically, except for the summary, which should share the
       ~same baseline as the name for proper visual alignment
       perform portal[promote].centervert
       perform portal[name].centervert
-      perform portal[source].alignrel[btob,name,0]
+      perform portal[summary].alignrel[btob,name,0]
 
       ~position the various portals horizontally
       perform portal[info].alignedge[right,0]
       perform portal[name].alignrel[ltor,promote,10]
-      perform portal[source].alignrel[ltor,name,10]
-      portal[source].width = portal[info].left - 10 - portal[source].left
+      perform portal[summary].alignrel[ltor,name,10]
+      portal[summary].width = portal[info].left - 10 - portal[summary].left
       ]]></position>
 
     </template>

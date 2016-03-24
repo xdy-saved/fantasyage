@@ -578,6 +578,14 @@
       maxlength="100">
       </field>
 
+      <field
+        id="spSumm"
+        name="Special Summary"
+        type="derived"
+        maxlength="250">
+        </field>
+
+
     <!-- Every thing that is shown on the Special tab also gets shown on the Dashboard/TacCon -->
     <tag group="DashTacCon" tag="Special"/>
 
@@ -594,6 +602,16 @@
         perform assign[Promote.Top]
         endif
       ]]></eval>
+
+
+            <eval index="3" phase="Render" priority="10000" name="Set spSumm"><![CDATA[
+                ~set summary if the field is stil blank
+                if (field[spSumm].isempty <> 0) then
+                   field[spSumm].text = field[summary].text
+                   endif
+
+
+                ]]></eval>
 
     </component>
 
